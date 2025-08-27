@@ -1,0 +1,79 @@
+
+/* 
+    HEADER SECTION 
+*/
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+.header-section {
+    background-color: #EEEEEE;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    color: black;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.header-centro ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.header-centro ul li {
+    cursor: pointer;
+    font-size: 20px;
+    letter-spacing: -1px;
+}
+
+.header-centro ul li a {
+    text-decoration: none;
+    color: #A8A8A8 !important;
+}
+
+.header-centro a:hover {
+    color: black !important;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 2px;
+}
+
+/* 
+    HERO SECTION 
+*/
+
+.hero-section {
+    background-image: url("./assets/hero-bg.png");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: 100px !important;
+    text-align: center;
+    margin: 100px 0 20px;
+}
+
+.hero-title-colored {
+    color: #7F56DA;
+}
+
+.hero-text {
+    font-size: 20px;
+    text-align: center;
+}
+
+
+/* 
+    2 IMAGES SECTION 
+*/
