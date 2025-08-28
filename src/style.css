@@ -101,7 +101,7 @@ a:active .logo {
     object-fit: contain;
 }
 
-.header .text-bold {
+.text-bold {
     font-weight: 600;
 }
 
@@ -282,6 +282,62 @@ a:active .logo {
     }
 }
 
+/* 
+    PRODUCTS
+ */
+
+.products {
+    background-color: #F0F0F0;
+}
+
+.produtcs h2 {
+    font-size: 2em;
+    font-weight: 600;
+    text-align: left;
+}
+
+.products-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    gap: 20px;
+}
+
+.products-item {
+    border-radius: 25px;
+    color: #fff;
+    text-align: left;
+    padding: 30px;
+}
+
+.products-image {
+    border-radius: 25px;
+    width: 270px;
+    height: 230px;
+    object-fit: cover;
+}
+
+.product-detail {
+
+}
+
+.product-detail h3 {
+    color: #1f1f1f;
+    font-size: 20px;
+    margin: 10px;
+}
+
+.city {
+    color: #B7B7B7;
+    font-size: 15px;
+}
+
+button .btn-buy {
+    padding: 20px 15x;
+    border-radius: 8px;
+    color: #FFF;
+    background-color: #1f1f1f;
+}
 
 /*
     CALL TO ACTION SECTION 
@@ -345,3 +401,43 @@ a:active .logo {
 /* 
     STEPS SECTION
  */
+
+
+
+/* 
+    FOOTER
+ */
+
+.footer {
+    background-color: #1f1f1f;
+    color: #747474;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 40px 80px;
+    align-items: center;
+    padding: 100px 80px;
+}
+
+.footer-copyright {
+    color: white;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+}
+
+.social-item {
+    width: 46px;
+    height: 46px;
+    opacity: .6;
+}
+
+.social-item:hover {
+    opacity: 1;
+}
