@@ -94,7 +94,7 @@ body {
 */
 
 .hero {
-    background-image: url("./assets/images/hero/bg-hero.png");
+    background-image: url("../assets/images/hero/bg-hero.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -157,6 +157,100 @@ body {
     CONTENT CARDS SECTION 
 */
 
+/* .cards {
+    display: flex;
+    flex-direction: row;
+    background-color: #E5E5E5;
+}
+
+.card-container {
+    border-radius: 25px;
+    background-color: #FFFFFF;
+    height: 320px;
+    padding: 20px;
+}
+
+.card-title {
+
+}
+
+.card-text {
+
+}
+
+.card-image {
+
+}
+
+.card-image-item {
+
+} */
+
+.cards {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: stretch;
+    padding: 30px 40px;
+    background: #eaeaea;
+}
+
+.card-container {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    flex: 1;
+    max-width: 600px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+.card-text {
+    flex: 1;
+    padding: 2rem;
+}
+
+.card-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-text p {
+    color: #666;
+    font-size: 15px;
+    line-height: 15px;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    padding: 10px 25px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    }
+
+.btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+.card-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex: 1;
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
 
 /* 
     CLIENTS SECTION 
@@ -171,19 +265,18 @@ body {
 .clients-track {
     display: flex;
     width: max-content;
-    animation: marquee 20s linear infinite;
+    animation: marquee 45s linear infinite;
 }
 
 .clients-logo {
     height: 50px;
-    margin: 0 40px;
+    margin: 0 3em;
     object-fit: contain;
 }
 
 .clients-logo:hover {
     transform: scale(1.1);
     transition: transform 0.3s ease;
-    /* filter: drop-shadow(0 0 0.75rem #a3cbff); */
     filter: invert(39%) sepia(79%) saturate(3821%) hue-rotate(247deg) brightness(91%) contrast(90%);
 }
 
