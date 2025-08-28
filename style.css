@@ -1,25 +1,24 @@
+
 /* 
-    FONTS SECTION 
+    RESET AND BODY SECTION 
 */
 
-.poppins-regular {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+* {
+    padding: 0;
 }
 
-.poppins-semibold {
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-style: normal;
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300 !important;
+    color: #1f1f1f;
 }
 
 /* 
     HEADER SECTION 
 */
 
-
-.header-section {
+.header {
     background-color: #EEEEEE;
     display: flex;
     flex-direction: row;
@@ -27,11 +26,13 @@
     align-items: center;
     padding: 0 30px;
     color: black;
+    letter-spacing: -1px;
 }
 
 .logo {
     font-size: 30px;
     font-weight: bold;
+    letter-spacing: -3px;
 }
 
 .header-centro ul {
@@ -44,7 +45,6 @@
 .header-centro ul li {
     cursor: pointer;
     font-size: 20px;
-    letter-spacing: -1px;
 }
 
 .header-centro ul li a {
@@ -59,21 +59,57 @@
     text-decoration-thickness: 2px;
 }
 
+.header-direita {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: right;
+}
+
+.header-direita-item {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    text-align: left;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.icon {
+    height: 41px;
+    max-width: 41px;
+    object-fit: contain;
+}
+
+.header .text-bold {
+    font-weight: 600;
+}
+
 /* 
     HERO SECTION 
 */
 
-.hero-section {
-    background-image: url("./assets/hero-bg.png");
+.hero {
+    background-image: url("./assets/images/hero/bg-hero.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .hero-title {
-    font-size: 100px !important;
     text-align: center;
-    margin: 100px 0 20px;
+    font-size: 80px !important;
+    line-height: 80px;
+    margin: 160px 0 20px;
+    font-weight: 600;
+    letter-spacing: -5px;
+    margin-bottom: 30px;
 }
 
 .hero-title-colored {
@@ -83,8 +119,37 @@
 .hero-text {
     font-size: 20px;
     text-align: center;
+    color: #B7B7B7;
+    margin-bottom: 90px;
 }
 
+.bottom-hero {
+    display: flex;
+}
+
+.bottom-hero-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: #F6F6F6;
+    border-radius: 25px;
+    padding: 15px;
+    margin: 0 10px;
+}
+
+.bottom-hero-item-icon {
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+.bottom-hero-item-text {
+    font-size: 15px;
+    line-height: 15px;
+    color: #9e9e9e;
+}
 
 /* 
     2 IMAGES SECTION 
