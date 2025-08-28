@@ -162,16 +162,43 @@ body {
     CLIENTS SECTION 
 */
 
-.clients {
+/* .clients {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    padding: 20px;
+    padding: 40px;
     background-color: #f5f5f5;
 }
 
 .clients-logo {
     height: 50px;
     object-fit: contain;
+} */
+
+.clients {
+    overflow: hidden;
+    background-color: #f5f5f5;
+    padding: 40px 0;
+}
+
+.clients-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 20s linear infinite;
+}
+
+.clients-logo {
+    height: 50px;
+    margin: 0 40px;
+    object-fit: contain;
+}
+
+@keyframes marquee {
+    0% {
+    transform: translateX(0);
+    }
+    100% {
+    transform: translateX(-50%);
+    }
 }
