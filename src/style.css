@@ -37,6 +37,19 @@ body {
     letter-spacing: -3px;
 }
 
+a .logo {
+    text-decoration: none;
+    cursor: pointer;
+    color: #1f1f1f !important;
+}
+
+a:link .logo,
+a:visited .logo,
+a:hover .logo,
+a:active .logo {
+    text-decoration: none;
+}
+
 .header-centro ul {
     list-style: none;
     display: flex;
