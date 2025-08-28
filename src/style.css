@@ -323,9 +323,14 @@ body {
 }
 
 .cta-card-image {
+    background-image: url("../assets/images/cta/cta-image-2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    border-radius: 15px;
     width: 550px;
     height: 660px;
-    object-fit: cover;
 }
 
 .cta h2 {
