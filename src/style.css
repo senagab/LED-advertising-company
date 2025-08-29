@@ -290,7 +290,15 @@ a:active .logo {
     background-color: #F0F0F0;
 }
 
-.produtcs h2 {
+.products-title-container {
+    display: grid;
+    grid-template-columns: 1fr 3.2fr;
+    flex-direction: row;
+    align-items: center;
+    padding: 40px;
+}
+
+.products h2 {
     font-size: 2em;
     font-weight: 600;
     text-align: left;
@@ -299,7 +307,7 @@ a:active .logo {
 .products-container {
     display: flex;
     justify-content: center;
-    padding: 40px 20px;
+    margin: 20px 20px;
     gap: 20px;
 }
 
@@ -307,36 +315,58 @@ a:active .logo {
     border-radius: 25px;
     color: #fff;
     text-align: left;
-    padding: 30px;
+    padding: 20px 20px 10px;
+    border: #ddd solid 1px;
 }
 
-.products-image {
-    border-radius: 25px;
+.products-item img {
+    border-radius: 12px 12px 0 0;
     width: 270px;
     height: 230px;
     object-fit: cover;
+    margin-bottom: 10px;
 }
 
 .product-detail {
-
+    border-top: #d9d9d9 solid 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
 }
 
 .product-detail h3 {
     color: #1f1f1f;
     font-size: 20px;
-    margin: 10px;
 }
 
 .city {
-    color: #B7B7B7;
+    color: #A8A8A8;
     font-size: 15px;
+    line-height: 15px;
+    font-weight: 500;
+    letter-spacing: -.07rem;
 }
 
-button .btn-buy {
+.product-detail-button button {
     padding: 20px 15x;
     border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.0);
     color: #FFF;
     background-color: #1f1f1f;
+}
+
+.product-detail-button button:hover {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 1);
+    color: #1f1f1f;
+}
+
+.products-button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px 40px;
 }
 
 /*
