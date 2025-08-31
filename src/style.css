@@ -439,13 +439,13 @@ a:active .logo {
 .footer {
     background-color: #1f1f1f;
     color: #747474;
+    font-size: 15px;
 }
 
 .footer-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding: 40px 80px;
     align-items: center;
     padding: 100px 80px;
 }
@@ -456,13 +456,13 @@ a:active .logo {
 
 .footer-socials {
     display: flex;
-    gap: 5px;
     flex-direction: row;
+    gap: 5px;
 }
 
 .social-item {
-    width: 46px;
-    height: 46px;
+    width: 30px;
+    height: 30px;
     opacity: .6;
 }
 
