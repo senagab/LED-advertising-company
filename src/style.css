@@ -288,14 +288,12 @@ a:active .logo {
 
 .products {
     background-color: #F0F0F0;
+    padding:  60px 20px;
 }
 
 .products-title-container {
-    display: grid;
-    grid-template-columns: 1fr 3.2fr;
-    flex-direction: row;
-    align-items: center;
-    padding: 40px;
+    align-items: left;
+    /* padding: 20px 40px; */
 }
 
 .products h2 {
@@ -366,7 +364,7 @@ a:active .logo {
 .products-button-container {
     display: flex;
     justify-content: flex-end;
-    padding: 30px 40px;
+    /* padding: 30px 40px; */
 }
 
 /*
