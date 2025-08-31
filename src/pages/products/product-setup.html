@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap-grid.min.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+
+    <section class="header">
+        <div class="header-direita">
+            <h1 style="display: none;">
+                logo
+            </h1>
+            <a href="../../../index.html">
+                <span class="logo">logo</span>
+            </a>
+        </div>
+        <div class="header-centro">
+            <ul>
+                <li>
+                    <a href="../pages/about-us/about.html">
+                        sobre nós
+                    </a>    
+                </li>
+                <li>
+                    <a href="../products/products.html" >
+                        produtos
+                    </a>    
+                </li>
+                <li>
+                    <a href="../steps/steps.html">
+                        passo-a-passo
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="header-direita">
+            <div class="header-direita-item">
+                <img class="icon" src="../../../assets/images/hero/icon-cart.png" alt="">
+                <span class="cart-text">
+                    Acompanhar <br>
+                    <span class="text-bold">
+                        pedidos
+                    </span>
+                </span>
+            </div>
+            <div class="header-direita-item">
+                <img class="icon" src="../../../assets/images/hero/icon-login.png" alt="">
+                <span class="cart-login">
+                    Seja bem vindo! <br>
+                    <span class="text-bold">
+                        Entrar ou Cadastrar
+                    </span>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        
+        .setup-page {
+            background-color: #E9E9E9;
+        }
+
+        .title-center {
+
+        }
+
+        .container {
+            display: flex;
+            /* border-radius: 25px; */
+            /* background-color: #fff; */
+            padding: 30px;
+        }
+
+        .product-setup {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-setup-header {
+            display: flex;
+            justify-content: center;
+            border-radius: 18px 18px 0 0;
+            background-color: #F2F2F2;
+            padding: 15px;
+        }
+
+        .product-setup-content {
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+        }
+
+        .media-upload {
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+            background-color: #F8F8F8;
+            border: 1px dashed #000;
+            padding: 60px 100px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .upload-icon {
+            /* background-image: url("../assets/images/cta/cta-image-1.png"); */
+            background-image: url("../../../assets/images/products-page/setup/upload.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            object-fit: cover;
+            width: 20px;
+            height: 20px;
+        }
+
+        .setup-instructions {
+            color: #A8A8A8;
+            font-size: 10px;
+            font-weight: 10px;
+            text-align: center;
+        }
+
+    </style>
+
+    <!-- SETUP PAGE -->
+
+    <section class="setup-page">
+        
+        <h2 class="center">
+            1. Imagens, Cidade e Horários
+        </h2>
+        <div class="product-setup container">
+            <div class="product-setup-header container">
+                <h3>IMAGENS</h3>
+            </div>
+            <div class="product-setup-content container">
+                <div class="media-upload ">
+                    <button class="btn">
+                        <img class="upload-icon" src="../../../assets/images/products-page/setup/upload.png" alt="">
+                        UPLOAD
+                    </button>
+                    <p class="setup-instructions">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium odit error distinctio magni a molestias ipsam
+                    </p>
+                </div>
+            </div>
+        </div>  
+    </section>
+</body>
+</html>
