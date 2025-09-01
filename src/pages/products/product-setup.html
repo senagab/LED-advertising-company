@@ -65,13 +65,16 @@
     </section>
 
     <style>
-        
+
         .setup-page {
             background-color: #E9E9E9;
         }
 
-        .title-center {
-
+        .setup-title-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 0 0 0;
         }
 
         .container {
@@ -90,7 +93,7 @@
 
         .product-setup-header {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             border-radius: 18px 18px 0 0;
             background-color: #F2F2F2;
             padding: 15px;
@@ -146,12 +149,43 @@
 
     <section class="setup-page">
         
-        <h2 class="center">
-            1. Imagens, Cidade e Horários
-        </h2>
+        <div class="setup-title-center">
+            <h2 >
+                1. Imagens, Cidade e Horários
+            </h2>
+        </div>
+
+        <!-- IMAGE UPLOADING -->
+        
         <div class="product-setup container">
             <div class="product-setup-header container">
                 <h3>IMAGENS</h3>
+            </div>
+            <div class="product-setup-content container">
+                <div class="media-upload ">
+                    <button class="btn">
+                        <img class="upload-icon" src="../../../assets/images/products-page/setup/upload.png" alt="">
+                        
+                        UPLOAD
+                    </button>
+                    <input type="file" id="myFile" name="filename">
+                    <p class="setup-instructions">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium odit error distinctio magni a molestias ipsam
+                    </p>
+                </div>
+            </div>
+        </div>  
+
+        <!-- DATES AND TIMETABLES -->
+        
+        <div class="setup-title-center">
+            <h2>
+                2. Horários e Locais
+            </h2>
+        </div>
+        <div class="product-setup container">
+            <div class="product-setup-header container">
+                <h3>HORÁRIOS E LOCAIS</h3>
             </div>
             <div class="product-setup-content container">
                 <div class="media-upload ">
