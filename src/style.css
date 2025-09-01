@@ -16,6 +16,12 @@ body {
     color: #1f1f1f;
 }
 
+.no-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
 /* 
     HEADER SECTION 
 */
