@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Page</title>
+    <title>Product Confirmation</title>
     <link rel="stylesheet" href="../../style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,9 +102,15 @@
         .product-setup-content {
             background-color: #fff;
             display: flex;
+            align-items: center;
             justify-content: center;
             flex-direction: column;
             border-radius: 0 0 18px 18px;
+        }
+
+        .product-setup-content img {
+            width: 100px;
+            height: 100px;
         }
 
         .media-upload {
@@ -140,21 +146,15 @@
 
         .setup-instructions {
             color: #A8A8A8;
-            font-size: 10px;
-            font-weight: 10px;
+            font-size: .7em;
             text-align: center;
+            margin: 20px;
         }
 
         .select {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-        }
-
-        .select-item {
-            display: flex;
-            flex-direction: column;
-            margin: 20px 10px;
         }
 
     </style>
@@ -165,7 +165,7 @@
         
         <div class="setup-title-center">
             <h2 >
-                1. Imagens, Cidade e Horários
+                3. Aguardar aprovação
             </h2>
         </div>
 
@@ -173,74 +173,20 @@
         
         <div class="product-setup container">
             <div class="product-setup-header container">
-                <h3>IMAGENS</h3>
+                <h3>DADOS ENVIADOS!</h3>
             </div>
             <div class="product-setup-content container">
-                <div class="media-upload ">
-                    <input type="file" id="myFile" name="filename" hidden>
-
-                    <label for="myFile" class="btn">
-                        <img class="upload-icon" src="../../../assets/images/products-page/setup/upload.png" alt="">
-                        UPLOAD
-                    </label>
-                    <p class="setup-instructions">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium odit error distinctio magni a molestias ipsam
-                    </p>
-                </div>
-            </div>
-        </div>  
-
-        <!-- DATES AND TIMETABLES -->
-        
-        <div class="setup-title-center">
-            <h2>
-                2. Horários e Locais
-            </h2>
-        </div>
-        <div class="product-setup container">
-            <div class="product-setup-header container">
-                <h3>HORÁRIOS E LOCAIS</h3>
-            </div>
-            <div class="product-setup-content container">
+                <img src="../../../assets/images/products/verified-lg.png" alt="">
                 <p class="setup-instructions">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam ratione non a. Magni excepturi itaque hic voluptas temporibus. Veniam officiis quidem maxime officia quas et, commodi deserunt inventore consequatur minus.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium odit error distinctio magni a molestias ipsam
                 </p>
-                <div class="select">
-                    <div class="select-item">
-                        <label for="city">City</label>
-                        <select name="city" id="city">
-                            <option value="sao-paulo">São Paulo</option>
-                            <option value="rio-de-janeiro">Rio de Janeiro</option>
-                            <option value="belo-horizonte">Belo Horizonte</option>
-                            <option value="salvador">Salvador</option>
-                            <option value="brasilia">Brasília</option>
-                        </select>
-                    </div>
-                    <div class="select-item">
-                        <label for="event-date">Starting Date</label>
-                        <input type="date" id="event-date" name="event-date">
-                    </div>
-                    <div class="select-item">
-                        <label for="city">Time</label>
-                        <select name="city" id="city">
-                            <option value="sao-paulo">10 hours</option>
-                            <option value="rio-de-janeiro">24 hours</option>
-                            <option value="belo-horizonte">36 hours</option>
-                            <option value="salvador">72 hours</option>
-                            <option value="brasilia">150 hours</option>
-                        </select>
-                    </div>
-                </div>
             </div>
-            <div class="container" style="display: flex; justify-content: right;">
-
-                <button class="btn" style="margin: 20px auto; text-align: center;">
-                    <a class="no-link" href="./product-confirmation.html">
-                        Continuar
-                    </a>
-                </button>
-            </div>
-        </div>  
+            <button class="btn" style="margin: 20px;">
+                <a class="no-link" href="../orders/orders.html">
+                    Finalizar
+                </a>
+            </button>
+        </div>
     </section>
 </body>
 </html>
