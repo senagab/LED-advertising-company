@@ -103,6 +103,8 @@
             background-color: #fff;
             display: flex;
             justify-content: center;
+            flex-direction: column;
+            border-radius: 0 0 18px 18px;
         }
 
         .media-upload {
@@ -143,6 +145,18 @@
             text-align: center;
         }
 
+        .select {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .select-item {
+            display: flex;
+            flex-direction: column;
+            margin: 20px 10px;
+        }
+
     </style>
 
     <!-- SETUP PAGE -->
@@ -163,12 +177,12 @@
             </div>
             <div class="product-setup-content container">
                 <div class="media-upload ">
-                    <button class="btn">
+                    <input type="file" id="myFile" name="filename" hidden>
+
+                    <label for="myFile" class="btn">
                         <img class="upload-icon" src="../../../assets/images/products-page/setup/upload.png" alt="">
-                        
                         UPLOAD
-                    </button>
-                    <input type="file" id="myFile" name="filename">
+                    </label>
                     <p class="setup-instructions">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium odit error distinctio magni a molestias ipsam
                     </p>
@@ -188,15 +202,41 @@
                 <h3>HORÁRIOS E LOCAIS</h3>
             </div>
             <div class="product-setup-content container">
-                <div class="media-upload ">
-                    <button class="btn">
-                        <img class="upload-icon" src="../../../assets/images/products-page/setup/upload.png" alt="">
-                        UPLOAD
-                    </button>
-                    <p class="setup-instructions">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium odit error distinctio magni a molestias ipsam
-                    </p>
+                <p class="setup-instructions">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam ratione non a. Magni excepturi itaque hic voluptas temporibus. Veniam officiis quidem maxime officia quas et, commodi deserunt inventore consequatur minus.
+                </p>
+                <div class="select">
+                    <div class="select-item">
+                        <label for="city">City</label>
+                        <select name="city" id="city">
+                            <option value="sao-paulo">São Paulo</option>
+                            <option value="rio-de-janeiro">Rio de Janeiro</option>
+                            <option value="belo-horizonte">Belo Horizonte</option>
+                            <option value="salvador">Salvador</option>
+                            <option value="brasilia">Brasília</option>
+                        </select>
+                    </div>
+                    <div class="select-item">
+                        <label for="event-date">Starting Date</label>
+                        <input type="date" id="event-date" name="event-date">
+                    </div>
+                    <div class="select-item">
+                        <label for="city">Time</label>
+                        <select name="city" id="city">
+                            <option value="sao-paulo">10 hours</option>
+                            <option value="rio-de-janeiro">24 hours</option>
+                            <option value="belo-horizonte">36 hours</option>
+                            <option value="salvador">72 hours</option>
+                            <option value="brasilia">150 hours</option>
+                        </select>
+                    </div>
                 </div>
+            </div>
+            <div class="container" style="display: flex; justify-content: right;">
+
+                <button class="btn" style="margin: 20px auto; text-align: center;">
+                    Continuar
+                </button>
             </div>
         </div>  
     </section>
