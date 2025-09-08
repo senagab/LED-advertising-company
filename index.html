@@ -23,7 +23,13 @@
                 <span class="logo">logo</span>
             </a>
         </div>
-        <div class="header-centro">
+
+        <!-- Botão Hamburguer (só aparece no mobile) -->
+        <div class="menu-toggle" id="menu-toggle">
+            ☰
+        </div>
+
+        <div id="menu" class="header-centro navbar-toggler">
             <ul>
                 <li>
                     <a href="./src/pages/about-us/about-us.html">
@@ -42,6 +48,7 @@
                 </li>
             </ul>
         </div>
+
         <div class="header-direita">
             <div class="header-direita-item">
                 
@@ -459,6 +466,15 @@
 
     // Executa sempre que mudar o tamanho da tela
     mediaQuery.addEventListener("change", reorderCards);
+    
+
+    // Menu hamburger
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+
+    toggle.addEventListener("click", () => {
+        menu.classList.toggle("active");
+    });
 </script>
 
 </body>

@@ -111,6 +111,41 @@ a:active .logo {
     font-weight: 600;
 }
 
+/* Botão hamburguer escondido no desktop */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-wrap: wrap;
+    }
+
+    /* Mostra botão hambúrguer */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Esconde menu inicialmente */
+    .header-centro {
+        display: none;
+        width: 100%;
+    }
+
+    .header-centro ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    /* Quando ativo */
+    .header-centro.active {
+        display: block;
+    }
+}
+
 /* 
     HERO SECTION 
 */
@@ -129,7 +164,7 @@ a:active .logo {
 .hero-title {
     text-align: center;
     font-size: 5em !important;
-    line-height: 80px;
+    line-height: 5em;
     margin: 160px 0 20px;
     font-weight: 600;
     letter-spacing: -5px;
@@ -530,6 +565,7 @@ a:active .logo {
     }
 
     .cta-card-image {
+        width: 100%;
     }
 
     .cta h2 {
