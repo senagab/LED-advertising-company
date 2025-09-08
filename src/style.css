@@ -280,38 +280,38 @@ a:active .logo {
 }
 
 @media screen and (max-width: 768px) {
- .cards {
-    flex-direction: column;
-    padding: 20px;
-    gap: 2rem;
-  }
+    .cards {
+        flex-direction: column;
+        padding: 20px;
+        gap: 2rem;
+    }
 
-  .card-container {
-    flex-direction: column; /* imagem em cima, texto embaixo */
-    align-items: center;
-    margin: 0;
-  }
+    .card-container {
+        flex-direction: column; /* imagem em cima, texto embaixo */
+        align-items: center;
+        margin: 0;
+    }
 
-  .card-image {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 25px 25px 0 0; /* só em cima */
-    overflow: hidden; /* garante que a imagem siga o border-radius */
-  }
+    .card-image {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 25px 25px 0 0; /* só em cima */
+        overflow: hidden; /* garante que a imagem siga o border-radius */
+    }
 
-  .card-text {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 0 0 25px 25px; /* só embaixo */
-    margin-top: -5px; /* cola no card de cima sem gap */
-    text-align: center;
-    align-items: center;
-  }
+    .card-text {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 0 0 25px 25px; /* só embaixo */
+        margin-top: -5px; /* cola no card de cima sem gap */
+        text-align: center;
+        align-items: center;
+    }
 
-  .card-text p {
-    margin-bottom: 1rem;
-  }
+    .card-text p {
+        margin-bottom: 1rem;
+    }
 }
 
 /* 
@@ -436,6 +436,33 @@ a:active .logo {
     /* padding: 30px 40px; */
 }
 
+@media screen and (max-width: 768px) {
+
+    .products-title-container {
+        display: flex;
+        align-items: center;
+        padding: 0 40px 20px;
+    }
+
+    .products-title-container h2 {
+        margin-top: 30px;
+    }
+    
+    .products-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .products-item {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .products-button-container {
+        justify-content: center;
+    }
+}
+
 /*
     CALL TO ACTION SECTION 
 */
@@ -495,6 +522,26 @@ a:active .logo {
     padding: 10px 65px;
 }
 
+@media screen and (max-width: 768px) {
+    .cta {
+    }
+
+    .cta-card {
+    }
+
+    .cta-card-image {
+    }
+
+    .cta h2 {
+    }
+
+    .cta p {
+    }
+
+    .cta .btn {
+    }
+}
+
 /* 
     STEPS SECTION
  */
@@ -537,4 +584,13 @@ a:active .logo {
 
 .social-item:hover {
     opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px 20px;
+        text-align: center;
+    }
 }
