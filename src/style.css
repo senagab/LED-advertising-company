@@ -202,11 +202,11 @@ a:active .logo {
 */
 
 .hero {
-    background-image: url("../assets/images/hero/bg-hero.png");
+    background-image: url("../assets/images/hero/bg-hero-lg-2.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 600px;
+    height: 650px;
     display: flex;
     flex-direction: column;
     align-items: center;
