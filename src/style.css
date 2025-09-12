@@ -169,15 +169,19 @@ a:active .logo {
         flex-wrap: wrap;
     }
 
-    /* Mostra botão hambúrguer */
     .menu-toggle {
         display: block;
+        cursor: pointer;
+        font-size: 30px;
     }
 
-    /* Esconde menu inicialmente */
+    /* Menu initially hidden */
     .header-centro {
-        display: none;
         width: 100%;
+        overflow: hidden;
+        max-height: 0;      /* collapsed */
+        opacity: 0;
+        transition: max-height 0.6s ease, opacity 0.3s ease;
     }
 
     .header-centro ul {
@@ -186,11 +190,13 @@ a:active .logo {
         padding: 10px 0;
     }
 
-    /* Quando ativo */
+    /* When active */
     .header-centro.active {
-        display: block;
+        max-height: 400px;  /* adjust depending on content */
+        opacity: 1;
     }
 }
+
 
 /* 
     HERO SECTION 
