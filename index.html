@@ -12,6 +12,17 @@
 </head>
 <body>
 
+    <!-- MODAL -->
+
+    <!-- Modal -->
+    <div id="tutorialModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="tutorial.jpeg" alt="Tutorial Postmooh" />
+        </div>
+    </div>
+
+
     <!-- HEADER -->
 
     <section class="header">
@@ -436,7 +447,33 @@
     </footer>
 
 <script>
-  // Função para alternar a ordem
+
+    // MODAL
+    document.addEventListener("DOMContentLoaded", function () {
+        const modal = document.getElementById("tutorialModal");
+        const closeBtn = document.querySelector(".close");
+
+        // Check if modal was already shown
+        if (!localStorage.getItem("tutorialShown")) {
+            modal.style.display = "block"; // Show modal
+            localStorage.setItem("tutorialShown", "true"); // Mark as shown
+        }
+
+        // Close modal on X click
+        closeBtn.onclick = function () {
+            modal.style.display = "none";
+        };
+
+        // Close modal on outside click
+        window.onclick = function (event) {
+            if (event.target === modal) {
+            modal.style.display = "none";
+            }
+        };
+    });
+
+
+    // Função para alternar a ordem
     function reorderCards(e) {
         const cardContainers = document.querySelectorAll('.card-container');
 
