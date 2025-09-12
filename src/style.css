@@ -41,14 +41,14 @@ body {
 
 /* Modal Content */
 .modal-content {
-    background: #fff;
+    /* background: #fff; */
     margin: 5% auto;
     padding: 10px;
-    border-radius: 12px;
+    /* border-radius: 12px; */
     width: 80%;
     max-width: 600px;
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    /* box-shadow: 0 5px 20px rgba(0,0,0,0.3); */
 }
 
 /* Image */
@@ -60,11 +60,11 @@ body {
 
 /* Close Button */
 /* .close {
-  color: #333;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
+    color: #333;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
 } */
 
 
