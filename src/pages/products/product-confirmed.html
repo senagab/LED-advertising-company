@@ -19,14 +19,20 @@
             <h1 style="display: none;">
                 logo
             </h1>
-            <a href="../../../index.html">
+            <a href="#">
                 <span class="logo">logo</span>
             </a>
         </div>
-        <div class="header-centro">
+
+        <!-- Botão Hamburguer (só aparece no mobile) -->
+        <div class="menu-toggle" id="menu-toggle">
+            ☰
+        </div>
+
+        <div id="menu" class="header-centro navbar-toggler">
             <ul>
                 <li>
-                    <a href="../about-us/about.html">
+                    <a href="../about-us/about-us.html">
                         sobre nós
                     </a>    
                 </li>
@@ -42,28 +48,33 @@
                 </li>
             </ul>
         </div>
+
         <div class="header-direita">
             <div class="header-direita-item">
+                
                 <img class="icon" src="../../../assets/images/hero/icon-cart.png" alt="">
-                <span class="cart-text">
-                    Acompanhar <br>
-                    <span class="text-bold">
-                        pedidos
+                <a class="no-link" href="../orders/orders.html">
+                    <span class="cart-text">
+                        Acompanhar <br>
+                        <span class="text-bold">
+                            pedidos
+                        </span>
                     </span>
-                </span>
+                </a>
             </div>
             <div class="header-direita-item">
                 <img class="icon" src="../../../assets/images/hero/icon-login.png" alt="">
-                <span class="cart-login">
-                    Seja bem vindo! <br>
-                    <span class="text-bold">
-                        Entrar ou Cadastrar
+                <a class="no-link" href="../login/login.html">
+                    <span class="cart-login">
+                        Seja bem vindo! <br>
+                        <span class="text-bold">
+                            Entrar ou Cadastrar
+                        </span>
                     </span>
-                </span>
+                </a>
             </div>
         </div>
     </section>
-
     <style>
 
         .setup-page {
