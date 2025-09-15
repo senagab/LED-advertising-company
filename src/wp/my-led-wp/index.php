@@ -95,22 +95,38 @@
 
             <div class="products-container">
                 <?php
-                // SIMPLE STATIC FALLBACK — if you later add a CPT 'product' you can replace this with a loop (see functions.php below)
-                for ( $i = 0; $i < 4; $i++ ) : ?>
-                    <div class="products-item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/product-1.png" alt="" class="product-image">
-                        <div class="divisor"></div>
-                        <div class="product-detail">
-                            <div class="product-detail-text">
-                                <h3>R$20/hr</h3>
-                                <div class="city">São Paulo, SP</div>
+                    $args = array(
+                        'post_type' => 'myled_product',
+                        'posts_per_page' => 8,
+                        'orderby' => 'date',
+                        'order' => 'DESC',
+                    );
+
+                    $products = new WP_Query( $args );
+                    if ( $products->have_posts() ) :
+                        while ( $products->have_posts() ) : $products->the_post(); ?>
+                            <div class="products-item">
+                                <?php if ( has_post_thumbnail() ) : ?>
+                                    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium', array('class'=>'product-image')); ?></a>
+                                <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/product-1.png" alt="" class="product-image">
+                                <?php endif; ?>
+
+                                <div class="divisor"></div>
+                                <div class="product-detail">
+                                    <div class="product-detail-text">
+                                        <h3><?php echo esc_html( get_post_meta(get_the_ID(), 'price', true) ?: 'R$20/hr' ); ?></h3>
+                                        <div class="city"><?php echo esc_html( get_post_meta(get_the_ID(), 'city', true) ?: 'São Paulo, SP' ); ?></div>
+                                    </div>
+                                    <div class="product-detail-button">
+                                        <a class="btn" href="<?php the_permalink(); ?>">Pedir agora</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="product-detail-button">
-                                <a class="btn" href="<?php echo esc_url( home_url( '/products/' ) ); ?>">Pedir agora</a>
-                            </div>
-                        </div>
-                    </div>
-                <?php endfor; ?>
+                        <?php endwhile;
+                        wp_reset_postdata();
+                    endif;
+                ?>
             </div>
 
             <div class="products-button-container">
@@ -123,22 +139,38 @@
 
             <div class="products-container">
                 <?php
-                // repeat the same static block for "Mais procurados"
-                for ( $i = 0; $i < 4; $i++ ) : ?>
-                    <div class="products-item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/product-1.png" alt="" class="product-image">
-                        <div class="divisor"></div>
-                        <div class="product-detail">
-                            <div class="product-detail-text">
-                                <h3>R$20/hr</h3>
-                                <div class="city">São Paulo, SP</div>
+                    $args = array(
+                        'post_type' => 'myled_product',
+                        'posts_per_page' => 8,
+                        'orderby' => 'date',
+                        'order' => 'DESC',
+                    );
+
+                    $products = new WP_Query( $args );
+                    if ( $products->have_posts() ) :
+                        while ( $products->have_posts() ) : $products->the_post(); ?>
+                            <div class="products-item">
+                                <?php if ( has_post_thumbnail() ) : ?>
+                                    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium', array('class'=>'product-image')); ?></a>
+                                <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/product-1.png" alt="" class="product-image">
+                                <?php endif; ?>
+
+                                <div class="divisor"></div>
+                                <div class="product-detail">
+                                    <div class="product-detail-text">
+                                        <h3><?php echo esc_html( get_post_meta(get_the_ID(), 'price', true) ?: 'R$20/hr' ); ?></h3>
+                                        <div class="city"><?php echo esc_html( get_post_meta(get_the_ID(), 'city', true) ?: 'São Paulo, SP' ); ?></div>
+                                    </div>
+                                    <div class="product-detail-button">
+                                        <a class="btn" href="<?php the_permalink(); ?>">Pedir agora</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="product-detail-button">
-                                <a class="btn" href="<?php echo esc_url( home_url( '/products/' ) ); ?>">Pedir agora</a>
-                            </div>
-                        </div>
-                    </div>
-                <?php endfor; ?>
+                        <?php endwhile;
+                        wp_reset_postdata();
+                    endif;
+                ?>
             </div>
 
             <div class="products-button-container">
