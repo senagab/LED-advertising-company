@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap-grid.min.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+
+    <section class="header">
+        <div class="header-direita">
+            <h1 style="display: none;">
+                logo
+            </h1>
+            <a href="../../../index.html">
+                <span class="logo">logo</span>
+            </a>
+        </div>
+
+        <!-- Botão Hamburguer (só aparece no mobile) -->
+        <div class="menu-toggle" id="menu-toggle">
+            ☰
+        </div>
+
+        <div id="menu" class="header-centro navbar-toggler">
+            <ul>
+                <li>
+                    <a href="../about-us/about-us.html">
+                        sobre nós
+                    </a>    
+                </li>
+                <li>
+                    <a href="../products/products.html" >
+                        produtos
+                    </a>    
+                </li>
+                <li>
+                    <a href="../steps/steps.html">
+                        passo-a-passo
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="header-direita">
+            <div class="header-direita-item">
+                
+                <img class="icon" src="../../../assets/images/hero/icon-cart.png" alt="">
+                <a class="no-link" href="../orders/orders.html">
+                    <span class="cart-text">
+                        Acompanhar <br>
+                        <span class="text-bold">
+                            pedidos
+                        </span>
+                    </span>
+                </a>
+            </div>
+            <div class="header-direita-item">
+                <img class="icon" src="../../../assets/images/hero/icon-login.png" alt="">
+                <a class="no-link" href="../login/login.html">
+                    <span class="cart-login">
+                        Seja bem vindo! <br>
+                        <span class="text-bold">
+                            Entrar ou Cadastrar
+                        </span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEARCH BAR -->
+
+
+    <!-- PRODUCTS -->
+
+    <section class="products">
+        <div class="container">
+            <div class="products-title-container">
+                <h2>
+                    Painéis
+                </h2>
+            </div>
+            <form class="select">
+                <p>
+                    <label for="pet-select">Escolha uma cidade</label>
+                    <select id="pet-select">
+                    <button>
+                        <selectedcontent></selectedcontent>
+                    </button>
+
+                    <option value="">Todas</option>
+                    <option value="sao-paulo">
+                        <span class="option-label">São Paulo</span>
+                    </option>
+                    <option value="guarulhos">
+                        <span class="option-label">Guarulhos</span>
+                    </option>
+                    <option value="amsterdam">
+                        <span class="option-label">Amsterdam</span>
+                    </option>
+                    </select>
+                </p>
+            </form>
+            <div class="products-container">
+                <div class="products-item">
+                    <img src="../../../assets/images/products/product-1.png" alt="" class="product-image">
+                    <div class="divisor"></div>
+                    <div class="product-detail">
+                        <div class="product-detail-text">
+                            <h3>
+                                R$20/hr
+                            </h3>
+                            <div class="city">
+                                São Paulo, SP
+                            </div>
+                        </div>
+                        <div class="product-detail-button">
+                            <a href="./product-page.html">
+                                <button class="btn">
+                                    Pedir agora
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="products-item">
+                    <img src="../../../assets/images/products/product-1.png" alt="" class="product-image">
+                    <div class="divisor"></div>
+                    <div class="product-detail">
+                        <div class="product-detail-text">
+                            <h3>
+                                R$20/hr
+                            </h3>
+                            <div class="city">
+                                São Paulo, SP
+                            </div>
+                        </div>
+                        <div class="product-detail-button">
+                            <a href="./product-page.html">
+                                <button class="btn">
+                                    Pedir agora
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="products-item">
+                    <img src="../../../assets/images/products/product-1.png" alt="" class="product-image">
+                    <div class="divisor"></div>
+                    <div class="product-detail">
+                        <div class="product-detail-text">
+                            <h3>
+                                R$20/hr
+                            </h3>
+                            <div class="city">
+                                São Paulo, SP
+                            </div>
+                        </div>
+                        <div class="product-detail-button">
+                            <a href="./product-page.html">
+                                <button class="btn">
+                                    Pedir agora
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="products-item">
+                    <img src="../../../assets/images/products/product-1.png" alt="" class="product-image">
+                    <div class="divisor"></div>
+                    <div class="product-detail">
+                        <div class="product-detail-text">
+                            <h3>
+                                R$20/hr
+                            </h3>
+                            <div class="city">
+                                São Paulo, SP
+                            </div>
+                        </div>
+                        <div class="product-detail-button">
+                            <a href="./product-page.html">
+                                <button class="btn">
+                                    Pedir agora
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="products-container">
+                <div class="products-item">
+                    <img src="../../../assets/images/products/product-1.png" alt="" class="product-image">
+                    <div class="divisor"></div>
+                    <div class="product-detail">
+                        <div class="product-detail-text">
+                            <h3>
+                                R$20/hr
+                            </h3>
+                            <div class="city">
+                                São Paulo, SP
+                            </div>
+                        </div>
+                        <div class="product-detail-button">
+                            <a href="./product-page.html">
+                                <button class="btn">
+                                    Pedir agora
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="products-item">
+                    <img src="../../../assets/images/products/product-1.png" alt="" class="product-image">
+                    <div class="divisor"></div>
+                    <div class="product-detail">
+                        <div class="product-detail-text">
+                            <h3>
+                                R$20/hr
+                            </h3>
+                            <div class="city">
+                                São Paulo, SP
+                            </div>
+                        </div>
+                        <div class="product-detail-button">
+                            <a href="./product-page.html">
+                                <button class="btn">
+                                    Pedir agora
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="products-item">
+                    <img src="../../../assets/images/products/product-1.png" alt="" class="product-image">
+                    <div class="divisor"></div>
+                    <div class="product-detail">
+                        <div class="product-detail-text">
+                            <h3>
+                                R$20/hr
+                            </h3>
+                            <div class="city">
+                                São Paulo, SP
+                            </div>
+                        </div>
+                        <div class="product-detail-button">
+                            <a href="./product-page.html">
+                                <button class="btn">
+                                    Pedir agora
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="products-item">
+                    <img src="../../../assets/images/products/product-1.png" alt="" class="product-image">
+                    <div class="divisor"></div>
+                    <div class="product-detail">
+                        <div class="product-detail-text">
+                            <h3>
+                                R$20/hr
+                            </h3>
+                            <div class="city">
+                                São Paulo, SP
+                            </div>
+                        </div>
+                        <div class="product-detail-button">
+                            <a href="./product-page.html">
+                                <button class="btn">
+                                    Pedir agora
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- FOOTER -->
+
+    <footer class="footer">
+        <div class="footer-container">
+            <span class="footer-email">
+                toni@myled.com.br
+            </span>
+            <span class="footer-copyright">
+                © <span class="text-bold">My Led</span> 2025 All Rights Reserved.
+            </span>
+            <div class="footer-socials">
+                <a href="#">
+                    <img class="social-item" src="../../../assets/images/footer/instagram.png" alt="">
+                </a>
+                <a href="#">
+                    <img class="social-item" src="../../../assets/images/footer/whatsapp.png" alt="">
+                </a>
+                <a href="#">
+                    <img class="social-item" src="../../../assets/images/footer/facebook.png" alt="">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../../scripts.js"></script>
+</body>
+</html>
