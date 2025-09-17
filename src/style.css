@@ -365,6 +365,43 @@ a:active .logo {
     object-fit: cover;
 }
 
+
+@media screen and (max-width: 1024px) {
+    .cards {
+        flex-direction: row;
+        align-items: baseline;
+        padding: 20px;
+        gap: 2rem;
+    }
+
+    .card-container {
+        flex-direction: column; /* imagem em cima, texto embaixo */
+        align-items: center;
+        margin: 0;
+    }
+
+    .card-image {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 25px 25px 0 0; /* só em cima */
+        overflow: hidden; /* garante que a imagem siga o border-radius */
+    }
+
+    .card-text {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 0 0 25px 25px; /* só embaixo */
+        margin-top: -5px; /* cola no card de cima sem gap */
+        text-align: center;
+        align-items: center;
+    }
+
+    .card-text p {
+        margin-bottom: 1rem;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .cards {
         flex-direction: column;

@@ -41,7 +41,7 @@
     }
 
     // Media query para mobile
-    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    const mediaQuery = window.matchMedia("(max-width: 1024px)");
 
     // Executa no carregamento
     reorderCards(mediaQuery);
