@@ -231,6 +231,7 @@ a:active .logo {
     text-align: center;
     color: #B7B7B7;
     margin-bottom: 90px;
+    padding: 0 40px;
 }
 
 .bottom-hero {
@@ -259,6 +260,15 @@ a:active .logo {
     font-size: 15px;
     line-height: 15px;
     color: #9e9e9e;
+}
+
+
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    .hero {
+        height: 80vh;
+    }
 }
 
 @media (max-width: 768px) {
@@ -557,6 +567,19 @@ a:active .logo {
     display: flex;
     justify-content: flex-end;
     /* padding: 30px 40px; */
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .products-container {
+        flex-wrap: wrap; /* allow wrapping */
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .products-item {
+        flex: 1 1 calc(50% - 40px); /* two per row, accounting for gap */
+        max-width: 300px;
+    }
 }
 
 @media screen and (max-width: 768px) {
