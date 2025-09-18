@@ -226,7 +226,7 @@
                 </p>
                 <div class="select">
                     <div class="select-item">
-                        <label for="city">City</label>
+                        <label for="city">Cidade</label>
                         <select name="city" id="city">
                             <option value="sao-paulo">São Paulo</option>
                             <option value="rio-de-janeiro">Rio de Janeiro</option>
@@ -236,17 +236,17 @@
                         </select>
                     </div>
                     <div class="select-item">
-                        <label for="event-date">Starting Date</label>
+                        <label for="event-date">Data de Início</label>
                         <input type="date" id="event-date" name="event-date">
                     </div>
                     <div class="select-item">
-                        <label for="city">Time</label>
-                        <select name="city" id="city">
-                            <option value="sao-paulo">10 hours</option>
-                            <option value="rio-de-janeiro">24 hours</option>
-                            <option value="belo-horizonte">36 hours</option>
-                            <option value="salvador">72 hours</option>
-                            <option value="brasilia">150 hours</option>
+                        <label for="city">Intervalo</label>
+                        <select name="city" id="time-select">
+                            <option value="10h">10 horas</option>
+                            <option value="24h">24 horas</option>
+                            <option value="36h">36 horas</option>
+                            <option value="72h">72 horas</option>
+                            <option value="150h">150 horas</option>
                         </select>
                     </div>
                 </div>
@@ -287,5 +287,41 @@
     </footer>
 
     <script src="../../scripts.js"></script>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const fileInput = document.getElementById("myFile");
+    const citySelect = document.getElementById("city");
+    const dateInput = document.getElementById("event-date");
+    const timeSelect = document.querySelector("#time-select"); // we’ll fix ID below
+    const continueBtn = document.querySelector("button a");
+
+    // Fix duplicate IDs in your HTML (two "city" IDs) → give the "time" select a unique id
+    // <select id="time-select"> ... </select>
+
+    let uploadedImages = [];
+
+    fileInput.addEventListener("change", (e) => {
+        const files = e.target.files;
+        uploadedImages = []; // reset
+
+        [...files].forEach(file => {
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+                uploadedImages.push(ev.target.result); // base64 string
+                localStorage.setItem("uploadedImages", JSON.stringify(uploadedImages));
+            };
+            reader.readAsDataURL(file);
+        });
+    });
+
+    continueBtn.addEventListener("click", () => {
+        localStorage.setItem("city", citySelect.value);
+        localStorage.setItem("date", dateInput.value);
+        localStorage.setItem("time", timeSelect.value);
+    });
+});
+</script>
+
 </body>
 </html>

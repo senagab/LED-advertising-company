@@ -273,29 +273,18 @@
                 </p>
                 <div class="select">
                     <div class="select-item">
-                        <label for="city">City</label>
-                        <p class="text-bold">
-                            São Paulo, SP
-                        </p>
+                        <label>Cidade</label>
+                        <p id="selected-city" class="text-bold">—</p>
                     </div>
                     <div class="select-item">
-                        <label for="event-date">Starting Date</label>
-                        <p class="text-bold">
-                            10-07-2026
-                        </p>
+                        <label>Data de Início</label>
+                        <p id="selected-date" class="text-bold">—</p>
                     </div>
                     <div class="select-item">
-                        <label for="city">Time</label>
-                        <p class="text-bold">
-                            10 Hours
-                        </p>
+                        <label>Intervalo</label>
+                        <p id="selected-time" class="text-bold">—</p>
                     </div>
-                    <div class="select-item">
-                        <label for="city">Price</label>
-                        <p class="text-bold">
-                            R$ 3.000,00
-                        </p>
-                    </div>
+
                 </div>
             </div>
             <div class="container" style="display: flex; justify-content: right;">
@@ -334,5 +323,30 @@
     </footer>
 
     <script src="../../scripts.js"></script>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    // Images
+    const gallery = document.querySelector(".media-gallery");
+    gallery.innerHTML = ""; // clear dummy boxes
+
+    const images = JSON.parse(localStorage.getItem("uploadedImages")) || [];
+    images.forEach(src => {
+        const item = document.createElement("div");
+        item.classList.add("media-item");
+        item.innerHTML = `
+            <div class="media-box" style="background-image: url('${src}'); background-size: cover;"></div>
+            <span class="verified"></span>
+        `;
+        gallery.appendChild(item);
+    });
+
+    // Other selections
+    document.querySelector("#selected-city").textContent = localStorage.getItem("city") || "—";
+    document.querySelector("#selected-date").textContent = localStorage.getItem("date") || "—";
+    document.querySelector("#selected-time").textContent = localStorage.getItem("time") || "—";
+});
+</script>
+
 </body>
 </html>

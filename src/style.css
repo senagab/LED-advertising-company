@@ -227,6 +227,7 @@ a:active .logo {
 }
 
 .hero-text {
+    width: 70%;
     font-size: 20px;
     text-align: center;
     color: #B7B7B7;
