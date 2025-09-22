@@ -275,7 +275,7 @@ a:active .logo {
 @media (max-width: 768px) {
     .hero {
         height: auto;
-        padding: 40px 20px;
+        padding: 20px;
     }
 
     .hero-title {
