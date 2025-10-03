@@ -358,7 +358,7 @@ a:active .logo {
     }
 
 .btn:hover {
-    background: #000;
+    background: #000000;
     color: #fff;
 }
 
@@ -559,9 +559,9 @@ a:active .logo {
 }
 
 .product-detail-button button:hover {
-    background-color: #fff;
+    background-color: #ff5100;
     border: 1px solid rgba(0, 0, 0, 1);
-    color: #1f1f1f;
+    color: #fff;
 }
 
 .products-button-container {
