@@ -240,6 +240,8 @@ a:active .logo {
 }
 
 .bottom-hero-item {
+    width: 150px;
+    height: 150px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -250,6 +252,12 @@ a:active .logo {
     margin: 0 10px;
 }
 
+.bottom-hero-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
 .bottom-hero-item-icon {
     width: 45px;
     height: 45px;
@@ -258,8 +266,9 @@ a:active .logo {
 }
 
 .bottom-hero-item-text {
-    font-size: 15px;
-    line-height: 15px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 25px;
     color: #9e9e9e;
 }
 
@@ -617,39 +626,31 @@ a:active .logo {
 .cta {
     display: flex;
     justify-content: center;
-    background-color: #FFFFFF;
-    color: #747474;
+    background-color: #12111F;
+    color: #fff;
     text-align: center;
-    padding: 30px 20px;
     gap: 20px;
 }
 
 .cta-card {
     display: flex;
     border-radius: 15px;
-    background-image: url("../assets/images/cta/cta-image-1.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     object-fit: cover;
     text-align: left;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 40px;
-    width: 550px;
-    height: 660px;
+    padding: 100px;
 }
 
 .cta-card-image {
-    background-image: url("../assets/images/cta/cta-image-2.png");
+    background-image: url("../assets/images/cta/cta-banner.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     object-fit: cover;
-    border-radius: 15px;
-    width: 550px;
-    height: 660px;
+    width: 100%;
+    height: 600px;
 }
 
 .cta h2 {
@@ -657,7 +658,6 @@ a:active .logo {
     line-height: 58px;
     font-weight: 600;
     margin-bottom: 35px;
-    color: #1f1f1f;
 }
 
 .cta p {
@@ -667,6 +667,10 @@ a:active .logo {
 
 .cta .btn {
     padding: 10px 65px;
+}
+
+.accent {
+    color: orange;
 }
 
 @media screen and (max-width: 768px) {
@@ -701,8 +705,8 @@ a:active .logo {
  */
 
 .footer {
-    background-color: #1f1f1f;
-    color: #747474;
+    background-color: #FF6203;
+    color: #fff;
     font-size: 15px;
 }
 
@@ -711,27 +715,25 @@ a:active .logo {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding: 100px 80px;
+    /* padding: 10px; */
 }
 
-.footer-copyright {
-    color: white;
-}
+.footer-logo img {
+    height: 100px;
+    object-fit: contain;
+}   
 
-.footer-socials {
+.footer-item {
     display: flex;
     flex-direction: row;
-    gap: 5px;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
 }
 
-.social-item {
+.footer-item img {
     width: 30px;
-    height: 30px;
-    opacity: .6;
-}
-
-.social-item:hover {
-    opacity: 1;
+    width: 30px;
 }
 
 @media screen and (max-width: 768px) {
