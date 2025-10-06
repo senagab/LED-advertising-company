@@ -383,6 +383,10 @@ a:active .logo {
     2-BANNER SECTION
 */
 
+.horizontal-banners {
+    background-color: #F9F9F9;
+}
+
 .horizontal-banners .container {
     display: flex;
     justify-content: center;
