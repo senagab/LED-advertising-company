@@ -751,39 +751,43 @@ a:active .logo {
 /*
     CALL TO ACTION SECTION 
 */
-
+/* ---------- CTA (base) ---------- */
 .cta {
     display: flex;
+    align-items: stretch;      /* children will match height */
     justify-content: center;
-    align-items: center;
     background-color: #12111F;
     color: #fff;
-    text-align: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 0;                    /* keep image flush to the right — change if you want spacing */
+    box-sizing: border-box;
 }
 
+/* Left content card */
 .cta-card {
+    flex: 0 0 50%;             /* left column: fixed 50% on large screens */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    border-radius: 15px;
-    text-align: left;
     padding: 100px;
-    max-width: 600px;
+    border-radius: 15px 0 0 15px; /* rounded left corners */
+    text-align: left;
+    box-sizing: border-box;
 }
 
+/* Right image (background) */
 .cta-card-image {
+    flex: 1 1 50%;             /* right column: fills remaining 50% and stretches to match .cta height */
+    min-height: 600px;         /* desktop height */
     background-image: url("../assets/images/cta/cta-banner.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    width: 100%;
-    height: 600px;
-    border-radius: 15px;
+    border-radius: 0 15px 15px 0; /* rounded right corners */
+    box-sizing: border-box;
 }
 
+/* typography and button spacing kept from your original */
 .cta h2 {
     font-size: 58px;
     line-height: 58px;
@@ -796,15 +800,21 @@ a:active .logo {
     margin-bottom: 35px;
 }
 
+/* style for the anchor used as button (feel free to adapt colors) */
 .cta .btn {
+    display: inline-block;
     padding: 10px 65px;
+    text-decoration: none;
+    color: inherit;
+    /* add bg/border if you want a visible button:
+       background: #fff; color: #12111F; border-radius: 8px; */
 }
 
-.accent {
-    color: orange;
-}
+/* accent color */
+.accent { color: orange; }
 
-/* Tablet (769px–1024px) */
+
+/* ---------- Tablet (keeps stacked / centered for medium widths) ---------- */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .cta {
         flex-direction: column;
@@ -816,7 +826,7 @@ a:active .logo {
     .cta-card {
         padding: 40px 20px;
         align-items: center;
-        text-align: center;
+        border-radius: 15px; /* full rounding when stacked */
     }
 
     .cta h2 {
@@ -836,45 +846,58 @@ a:active .logo {
 
     .cta-card-image {
         height: 300px;
-        border-radius: 10px;
+        width: 300px;
+        min-height: 300px;
+        border-radius: 15px;
+        margin: 0 auto;
     }
 }
 
-/* ✅ Mobile (max 768px) — image on top, text below */
+/* ---------- Mobile: image above, text below ---------- */
 @media screen and (max-width: 768px) {
     .cta {
-        flex-direction: column-reverse; /* puts image ABOVE text */
-        gap: 30px;
-        padding: 40px 20px;
+        flex-direction: column;   /* stack vertically */
+        text-align: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .cta-card,
+    .cta-card-image {
+        flex-basis: auto;
+        width: 100%;
+    }
+
+    /* put image on top on mobile */
+    .cta-card-image {
+        order: -1;                /* image appears first */
+        min-height: 260px;        /* feel free to change */
+        border-radius: 15px;
     }
 
     .cta-card {
-        padding: 20px;
+        padding: 30px 18px;
         align-items: center;
         text-align: center;
-    }
-
-    .cta-card-image {
-        width: 100%;
-        height: 300px;
-        border-radius: 10px;
+        border-radius: 15px;
     }
 
     .cta h2 {
-        font-size: 2em;
-        line-height: 1.2em;
-        margin-bottom: 15px;
+        font-size: 1.8rem;
+        line-height: 1.05;
+        margin-bottom: 18px;
     }
 
     .cta p {
-        font-size: 0.95em;
-        margin-bottom: 20px;
+        font-size: 1rem;
+        margin-bottom: 18px;
     }
 
     .cta .btn {
-        padding: 10px 30px;
+        padding: 10px 36px;
     }
 }
+
 
 /* 
     FOOTER
