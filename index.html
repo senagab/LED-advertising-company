@@ -31,7 +31,8 @@
                 logo
             </h1>
             <a href="#">
-                <span class="logo">logo</span>
+                <!-- <span class="logo">logo</span> -->
+                <img class="logo" src="./assets/images/hero/logo.png" alt="">
             </a>
         </div>
 
@@ -91,8 +92,8 @@
 
     <section class="hero">
         <h2 class="hero-title">
-            Já pensou em ver a sua marca <br>
-            nos painéis de LED de 
+            O jeito mais fácil 
+            de anunciar <br> em
             <span class="hero-title-colored">
                 Campo Grande?
             </span>
@@ -217,7 +218,15 @@
                     </div>
                 </div>
             </div>
+            <div class="products-button-container">
+                <a href="/src/pages/products/products.html">
+                    <button class="btn">
+                        Ver todos
+                    </button>
+                </a>
+            </div>
         </div>
+        
     </section>
 
     <!-- BANNERS HORIZONTAIS -->
@@ -225,12 +234,12 @@
     <section class="horizontal-banners">
         <div class="container">
             
-            <div class="horizontal-banners_item">
-                <img src="./assets/images/products/product-1.png" alt="">
+            <div class="horizontal-banners-item">
+                <img src="./assets/images/products/banner-1.png" alt="">
             </div>
             
-            <div class="horizontal-banners_item">
-                <img src="./assets/images/products/product-1.png" alt="">
+            <div class="horizontal-banners-item">
+                <img src="./assets/images/products/banner-2.png" alt="">
             </div>
 
         </div>
@@ -240,13 +249,6 @@
     
     <section class="products">
         <div class="container">
-            <div class="products-button-container">
-                <a href="/src/pages/products/products.html">
-                    <button class="btn">
-                        Ver todos
-                    </button>
-                </a>
-            </div>
             <div class="products-title-container">
                 <h2>
                     Mais procurados
@@ -348,6 +350,58 @@
         </div>
     </section>
 
+    <!-- ANUNCIANTES -->
+
+    <section class="advertisers">
+        <div class="container">
+            <h2>
+                Anunciantes
+            </h2>
+            <span class="advertisers-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Aliquam quis lacus ac magna mollis.
+            </span>
+            <div class="advertisers-group">
+                <div class="advertisers-item item-1">
+                    <h3>
+                        Anunciante 1
+                    </h3>
+                    <span class="advertisers-item-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Aliquam quis lacus ac magna mollis.
+                    </span>
+                </div>
+                <div class="advertisers-item item-2">
+                    <h3>
+                        Anunciante 2
+                    </h3>
+                    <span class="advertisers-item-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Aliquam quis lacus ac magna mollis.
+                    </span>
+                </div>
+                <div class="advertisers-item item-3">
+                    <h3>
+                        Anunciante 3
+                    </h3>
+                    <span class="advertisers-item-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Aliquam quis lacus ac magna mollis.
+                    </span>
+                </div>
+                <div class="advertisers-item item-4">
+                    <h3>
+                        Anunciante 4
+                    </h3>
+                    <span class="advertisers-item-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Aliquam quis lacus ac magna mollis.
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CLIENTS -->
 
     <!-- <section class="clients">
@@ -405,6 +459,28 @@
             </span>
         </div>
     </footer>
+    <script>
+        // Select the span element
+        const heroTitleColored = document.querySelector('.hero-title-colored');
+
+        // Define the list of texts to loop through
+        const locations = ['ruas', 'aeroportos', 'transportes', 'elevadores', 'shoppings'];
+
+        // Start at the first index
+        let index = 0;
+
+        // Function to change the text
+        function changeText() {
+            heroTitleColored.textContent = locations[index];
+            index = (index + 1) % locations.length; // Loop back to 0 when reaching the end
+        }
+
+        // Change the text every second (1000 ms)
+        setInterval(changeText, 1000);
+
+        // Optionally, run once immediately so it doesn’t wait 1s for the first update
+        changeText();
+    </script>
 
     <script src="./src/scripts.js"></script>
 </body>
