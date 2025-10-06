@@ -22,7 +22,7 @@ body {
     cursor: pointer;
 }
 
-.btn {
+/* .btn {
     padding: 10px 20px;
     font-size: 1em;
 }
@@ -31,7 +31,57 @@ body {
     cursor: pointer;
     background-color: #F26F23;
     color: #fff;
+} */
+
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #333; /* base color */
+    font-weight: 500;
+    border: 2px solid #333;
+    overflow: hidden;
+    transition: color 0.4s ease; /* text color transition */
+    cursor: pointer;
 }
+
+/* Create the fill layer */
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 94, 0, 0.8),
+        rgb(209, 78, 2)
+    );
+    z-index: 0;
+    transition: width 0.4s ease;
+}
+
+/* On hover: fill from left to right and change text color */
+.btn:hover::before {
+    width: 100%;
+}
+
+.btn:hover {
+    color: #fff;
+    border: 2px solid rgb(209, 78, 2);
+}
+
+/* Keep text above the fill layer */
+.btn span,
+.btn strong,
+.btn b {
+    position: relative;
+    z-index: 1;
+}
+
 
 /* 
     MODAL
@@ -268,7 +318,8 @@ a:active .logo {
     left: 0;
     width: 100%;
     height: 0%; /* start invisible */
-    background-color: #F26F23; /* your fill color */
+    /* background-color: #F26F23; */
+    background: linear-gradient(to bottom, rgba(255, 94, 0,0.8), rgb(209, 78, 2));
     transition: height 0.4s ease; /* control fill speed */
     z-index: 0; /* stay behind the text */
     border-radius: 25px; /* match parent */
@@ -283,6 +334,8 @@ a:active .logo {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transform: translateY(-5px);
     transition: all 0.3s ease;
+    cursor: pointer;
+    font-weight: 500;
 }
 
 .bottom-hero-item-icon {
@@ -403,6 +456,17 @@ a:active .logo {
 
 .horizontal-banners-item img {
     width: 90%;
+}
+
+@media screen and (max-width: 768px) {
+    .horizontal-banners .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .horizontal-banners-item img {
+        width: 100%;
+    }
 }
 
 /* 
@@ -583,7 +647,7 @@ a:active .logo {
     width: 100%;
     height: 0%;
     background-color: rgba(255, 98, 1, 0.9); /* fill color and opacity */
-    transition: height 0.5s ease;
+    transition: height 0.3s ease;
     z-index: 0;
 }
 
@@ -683,7 +747,6 @@ a:active .logo {
         max-width: 300px;
     }
 }
-
 /*
     CALL TO ACTION SECTION 
 */
@@ -691,21 +754,23 @@ a:active .logo {
 .cta {
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: #12111F;
     color: #fff;
     text-align: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .cta-card {
     display: flex;
-    border-radius: 15px;
-    object-fit: cover;
-    text-align: left;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    border-radius: 15px;
+    text-align: left;
     padding: 100px;
+    max-width: 600px;
 }
 
 .cta-card-image {
@@ -713,9 +778,9 @@ a:active .logo {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    object-fit: cover;
     width: 100%;
     height: 600px;
+    border-radius: 15px;
 }
 
 .cta h2 {
@@ -738,6 +803,7 @@ a:active .logo {
     color: orange;
 }
 
+/* Tablet (769px–1024px) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .cta {
         flex-direction: column;
@@ -749,6 +815,7 @@ a:active .logo {
     .cta-card {
         padding: 40px 20px;
         align-items: center;
+        text-align: center;
     }
 
     .cta h2 {
@@ -768,14 +835,45 @@ a:active .logo {
 
     .cta-card-image {
         height: 300px;
+        border-radius: 10px;
     }
 }
 
-/* 
-    STEPS SECTION
- */
+/* ✅ Mobile (max 768px) — image on top, text below */
+@media screen and (max-width: 768px) {
+    .cta {
+        flex-direction: column-reverse; /* puts image ABOVE text */
+        gap: 30px;
+        padding: 40px 20px;
+    }
 
+    .cta-card {
+        padding: 20px;
+        align-items: center;
+        text-align: center;
+    }
 
+    .cta-card-image {
+        width: 100%;
+        height: 300px;
+        border-radius: 10px;
+    }
+
+    .cta h2 {
+        font-size: 2em;
+        line-height: 1.2em;
+        margin-bottom: 15px;
+    }
+
+    .cta p {
+        font-size: 0.95em;
+        margin-bottom: 20px;
+    }
+
+    .cta .btn {
+        padding: 10px 30px;
+    }
+}
 
 /* 
     FOOTER
