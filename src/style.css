@@ -885,7 +885,7 @@ a:active .logo {
 }
 
 /* accent color */
-.accent { color: orange; }
+.accent { color: rgba(255, 98, 1, 0.9); }
 
 
 /* ---------- Tablet (keeps stacked / centered for medium widths) ---------- */
