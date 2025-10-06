@@ -23,7 +23,14 @@ body {
 }
 
 .btn {
-    padding: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: #F26F23;
+    color: #fff;
 }
 
 /* 
@@ -261,7 +268,7 @@ a:active .logo {
     left: 0;
     width: 100%;
     height: 0%; /* start invisible */
-    background-color: black; /* your fill color */
+    background-color: #F26F23; /* your fill color */
     transition: height 0.4s ease; /* control fill speed */
     z-index: 0; /* stay behind the text */
     border-radius: 25px; /* match parent */
@@ -473,7 +480,7 @@ a:active .logo {
 }
 
 .product-detail-button button:hover {
-    background-color: #ff5100;
+    background-color: #F26F23;
     border: 1px solid rgba(0, 0, 0, 1);
     color: #fff;
 }
@@ -646,6 +653,37 @@ a:active .logo {
     line-height: 15px;;
 }
 
+@media screen and (max-width: 768px) {
+    .advertisers .container {
+        text-align: center;
+    }
+
+    .advertisers-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .advertisers-item {
+        width: 100%;
+        max-width: 300px;
+        height: auto; /* allow height to adjust based on content */
+        padding: 60px 20px; /* increase padding for better spacing */
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .advertisers-group {
+        flex-wrap: wrap; /* allow wrapping */
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .advertisers-item {
+        flex: 1 1 calc(50% - 40px); /* two per row, accounting for gap */
+        max-width: 300px;
+    }
+}
+
 /*
     CALL TO ACTION SECTION 
 */
@@ -700,24 +738,36 @@ a:active .logo {
     color: orange;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
     .cta {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        padding: 40px 20px;
     }
 
     .cta-card {
-    }
-
-    .cta-card-image {
-        width: 100%;
+        padding: 40px 20px;
+        align-items: center;
     }
 
     .cta h2 {
+        font-size: 2.5em;
+        line-height: 1.2em;
+        margin-bottom: 20px;
     }
 
     .cta p {
+        font-size: 1em;
+        margin-bottom: 20px;
     }
 
     .cta .btn {
+        padding: 10px 40px;
+    }
+
+    .cta-card-image {
+        height: 300px;
     }
 }
 

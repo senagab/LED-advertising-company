@@ -20,7 +20,8 @@
                 logo
             </h1>
             <a href="../../../index.html">
-                <span class="logo">logo</span>
+                <!-- <span class="logo">logo</span> -->
+                <img class="logo" src="../../../assets/images/hero/logo.png" alt="">
             </a>
         </div>
 
@@ -33,17 +34,17 @@
             <ul>
                 <li>
                     <a href="../about-us/about-us.html">
-                        sobre nós
+                        QUEM SOMOS
                     </a>    
                 </li>
                 <li>
                     <a href="../products/products.html" >
-                        produtos
+                        PRODUTOS
                     </a>    
                 </li>
                 <li>
                     <a href="../steps/steps.html">
-                        passo-a-passo
+                        ANUNCIANTES
                     </a>
                 </li>
             </ul>
@@ -104,6 +105,27 @@
             line-height: 1.5em;
         }
 
+        .points {    
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 100px;
+            gap: 120px;
+        }
+
+        .points h3 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .points-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         @media (max-width: 900px) {
             .about {
                 flex-direction: column;
@@ -144,6 +166,41 @@
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis exercitationem dolores temporibus aliquid neque quas rem animi corrupti quasi ullam incidunt delectus, aperiam, aspernatur reprehenderit quibusdam totam, dolorem expedita quidem!
             </p>
         </div>
+    </section>
+
+    <section class="points container">
+            <div class="points-item">
+                <h3>
+                    Missão
+                </h3>
+                <span>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus exercitationem cum, eos aperiam obcaecati corrupti sint, neque non incidunt illum ipsam facilis saepe reiciendis vel doloribus voluptate voluptatum harum libero.
+                </span>
+            </div>
+            <div class="points-item">
+                <h3>
+                    Valores
+                </h3>
+                <span>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus exercitationem cum, eos aperiam obcaecati corrupti sint, neque non incidunt illum ipsam facilis saepe reiciendis vel doloribus voluptate voluptatum harum libero.
+                </span>
+            </div>
+            <div class="points-item">
+                <h3>
+                    Objetivos
+                </h3>
+                <span>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus exercitationem cum, eos aperiam obcaecati corrupti sint, neque non incidunt illum ipsam facilis saepe reiciendis vel doloribus voluptate voluptatum harum libero.
+                </span>
+            </div>
+            <div class="points-item">
+                <h3>
+                    Visão
+                </h3>
+                <span>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus exercitationem cum, eos aperiam obcaecati corrupti sint, neque non incidunt illum ipsam facilis saepe reiciendis vel doloribus voluptate voluptatum harum libero.
+                </span>
+            </div>
     </section>
 
 
