@@ -1,20 +1,25 @@
 // MODAL
-    document.addEventListener("DOMContentLoaded", function () {
-        const modal = document.getElementById("tutorialModal");
+document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.getElementById("tutorialModal");
+  const content = modal.querySelector(".modal-content");
 
-        // Show modal only first time
-        if (!localStorage.getItem("tutorialShown")) {
-            modal.style.display = "block";
-            localStorage.setItem("tutorialShown", "true");
-        }
+  // Always show modal on page load
+  modal.style.display = "flex";
 
-        // Close modal if user clicks outside the modal content
-        modal.addEventListener("click", function (event) {
-            if (event.target === modal) {
-            modal.style.display = "none";
-            }
-        });
-    });
+  // Close modal when user clicks outside image
+  modal.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      // fade out smoothly
+      content.style.animation = "fadeOutModal 0.4s ease forwards";
+      setTimeout(() => {
+        modal.style.display = "none";
+        content.style.animation = "fadeInModal 0.5s ease forwards"; // reset for next open
+      }, 400);
+    }
+  });
+});
+
+
 
 // HERO 1 ANIMATION
 
