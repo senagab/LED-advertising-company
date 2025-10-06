@@ -1,4 +1,4 @@
-    // MODAL
+// MODAL
     document.addEventListener("DOMContentLoaded", function () {
         const modal = document.getElementById("tutorialModal");
 
@@ -16,41 +16,52 @@
         });
     });
 
+// HERO 1 ANIMATION
 
+    // Select the span element
+    const heroTitleColored = document.querySelector('.hero-title-colored');
 
-    // Função para alternar a ordem
-    function reorderCards(e) {
-        const cardContainers = document.querySelectorAll('.card-container');
+    // Define the list of texts to loop through
+    const locations = ['ruas', 'aeroportos', 'transportes', 'elevadores', 'shoppings'];
 
-        cardContainers.forEach(container => {
-            const text = container.querySelector('.card-text');
-            const image = container.querySelector('.card-image');
+    // Start at the first index
+    let index = 0;
 
-            if (e.matches) {
-            // Mobile: imagem antes do texto
-            if (container.firstElementChild !== image) {
-                container.insertBefore(image, text);
-            }
-            } else {
-            // Desktop: texto antes da imagem
-            if (container.firstElementChild !== text) {
-                container.insertBefore(text, image);
-            }
-            }
-        });
+    // Function to change the text
+    function changeText() {
+        heroTitleColored.textContent = locations[index];
+        index = (index + 1) % locations.length; // Loop back to 0 when reaching the end
     }
 
-    // Media query para mobile
-    const mediaQuery = window.matchMedia("(max-width: 1024px)");
+    // Change the text every second (1000 ms)
+    setInterval(changeText, 1000);
 
-    // Executa no carregamento
-    reorderCards(mediaQuery);
+    // Optionally, run once immediately so it doesn’t wait 1s for the first update
+    changeText();
 
-    // Executa sempre que mudar o tamanho da tela
-    mediaQuery.addEventListener("change", reorderCards);
+// HERO 2 ANIMATION
+    document.addEventListener("DOMContentLoaded", () => {
+    const hero = document.querySelector(".hero-2");
+    const titleSpans = hero.querySelectorAll(".hero-2-title span");
+
+    // Pause animation initially
+    titleSpans.forEach(span => span.style.animationPlayState = "paused");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Start the animation when visible
+            titleSpans.forEach(span => span.style.animationPlayState = "running");
+            observer.unobserve(hero); // Run only once
+        }
+        });
+    }, { threshold: 0.3 }); // 0.3 = 30% of section visible
+
+    observer.observe(hero);
+    });
     
 
-    // Menu hamburger
+// MENU TOGGLE
     const toggle = document.getElementById("menu-toggle");
     const menu = document.getElementById("menu");
 
