@@ -122,10 +122,11 @@
         </div>
     </section>
 
-    <section class="hero-2" style="padding: 100px; background-color: #f9f9f9;">
-        <h2 class="hero-title" style="margin: 0;">
-            Já pensou em ver a sua marca  <br>
-            nos painéis de LED de <span class="accent">Campo Grande</span>?
+    <!-- HERO 2 -->
+
+    <section class="hero-2" style="padding: 100px; background-color: #f9f9f9; animation: heroBreath 6s ease-in-out infinite;">
+        <h2 class="hero-2-title">
+            <span>Já</span> <span>pensou</span> <span>em</span> <span>ver</span> <span>sua</span> <span>marca</span> <span>nos</span> <span>melhores</span> <span>locais</span> <span>de</span> <span class="accent">Campo</span> <span class="accent">Grande</span> <span>?</span>
         </h2>
     </section>
 
@@ -498,6 +499,27 @@
 
         // Optionally, run once immediately so it doesn’t wait 1s for the first update
         changeText();
+
+        // HERO 2 ANIMATION
+        document.addEventListener("DOMContentLoaded", () => {
+        const hero = document.querySelector(".hero-2");
+        const titleSpans = hero.querySelectorAll(".hero-2-title span");
+
+        // Pause animation initially
+        titleSpans.forEach(span => span.style.animationPlayState = "paused");
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Start the animation when visible
+                titleSpans.forEach(span => span.style.animationPlayState = "running");
+                observer.unobserve(hero); // Run only once
+            }
+            });
+        }, { threshold: 0.3 }); // 0.3 = 30% of section visible
+
+        observer.observe(hero);
+        });
     </script>
 
     <script src="./src/scripts.js"></script>

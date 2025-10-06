@@ -403,6 +403,60 @@ a:active .logo {
 }
 
 /* 
+    HERO 2 SECTION
+*/
+
+.hero-2-title {
+    text-align: center;
+    font-size: 80px;
+    line-height: 80px;
+    font-weight: 600;
+    letter-spacing: -5px;
+    display: inline-block;
+}
+
+.hero-2-title span {
+    opacity: 0;
+    transform: translateY(40px);
+    display: inline-block;
+    animation: wordIn 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* elegant stagger */
+.hero-2-title span:nth-child(1)  { animation-delay: 0.1s; }
+.hero-2-title span:nth-child(2)  { animation-delay: 0.25s; }
+.hero-2-title span:nth-child(3)  { animation-delay: 0.4s; }
+.hero-2-title span:nth-child(4)  { animation-delay: 0.55s; }
+.hero-2-title span:nth-child(5)  { animation-delay: 0.7s; }
+.hero-2-title span:nth-child(6)  { animation-delay: 0.85s; }
+.hero-2-title span:nth-child(7)  { animation-delay: 1.0s; }
+.hero-2-title span:nth-child(8)  { animation-delay: 1.15s; }
+.hero-2-title span:nth-child(9)  { animation-delay: 1.3s; }
+.hero-2-title span:nth-child(10) { animation-delay: 1.45s; }
+.hero-2-title span:nth-child(11) { animation-delay: 1.6s; }
+.hero-2-title span:nth-child(12) { animation-delay: 1.75s; }
+.hero-2-title span:nth-child(13) { animation-delay: 1.9s; }
+
+@keyframes wordIn {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-2-title {
+        font-size: 40px;
+        line-height: 40px;
+        letter-spacing: -2px;
+    }
+}
+
+/* 
     CLIENTS SECTION 
 */
 
