@@ -454,7 +454,7 @@ a:active .logo {
     }
 
     .bottom-hero-item {
-        width: 100%;
+        width: 150px;
         justify-content: center;
     }
 }
