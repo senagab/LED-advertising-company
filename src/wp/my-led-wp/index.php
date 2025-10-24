@@ -4,47 +4,42 @@
 
     <section class="hero">
         <h2 class="hero-title">
-            Skiff the new whatever, <span class="hero-title-colored">ready <br>
-            yourself</span>
-            for your enterprise
+            O jeito mais fácil 
+            de anunciar <br> em
+            <span class="hero-title-colored">
+                Campo Grande?
+            </span>
         </h2>
-        <span class="hero-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis lacus ac agna mollis ornare sed. <br>
-            Ut bibendum turpis nisi, vel tincidunt mauris.
-        </span>
         <div class="bottom-hero">
             <div class="bottom-hero-item">
-                <img class="bottom-hero-item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/hero/icon-bell.png" alt="">
                 <span class="bottom-hero-item-text">
-                    Pedidos
-                    respondidos
+                    Quero anunciar online
                 </span>
             </div>
             <div class="bottom-hero-item">
-                <img class="bottom-hero-item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/hero/icon-paper-plane.png" alt="">
                 <span class="bottom-hero-item-text">
-                    Lorem ipsum dolor sit.
+                    Anunciantes
                 </span>
             </div>
             <div class="bottom-hero-item">
-                <img class="bottom-hero-item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/hero/icon-sun.png" alt="">
                 <span class="bottom-hero-item-text">
-                    Lorem ipsum dolor sit.
+                    Melhores pontos
                 </span>
             </div>
             <div class="bottom-hero-item">
-                <img class="bottom-hero-item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/hero/icon-arrow.png" alt="">
                 <span class="bottom-hero-item-text">
-                    Lorem ipsum dolor sit.
-                </span>
-            </div>
-            <div class="bottom-hero-item">
-                <img class="bottom-hero-item-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/hero/icon-rocket.png" alt="">
-                <span class="bottom-hero-item-text">
-                    Lorem ipsum dolor sit.
+                    Quem somos
                 </span>
             </div>
         </div>
+    </section>
+
+    <!-- HERO 2 -->
+
+    <section class="hero-2" style="padding: 100px; background-color: #f9f9f9; animation: heroBreath 6s ease-in-out infinite;">
+        <h2 class="hero-2-title">
+            <span>Já</span> <span>pensou</span> <span>em</span> <span>ver</span> <span>sua</span> <span>marca</span> <span>nos</span> <span>melhores</span> <span>locais</span> <span>de</span> <span class="accent">Campo</span> <span class="accent">Grande</span> <span>?</span>
+        </h2>
     </section>
 
     <!-- CARDS -->
@@ -84,6 +79,7 @@
     </section>
 
     <!-- PRODUCTS -->
+    
     <section class="products">
         <div class="container">
             <div class="products-title-container">
@@ -132,9 +128,34 @@
             <div class="products-button-container">
                 <a class="btn" href="<?php echo esc_url( home_url( '/products/' ) ); ?>">Ver todos</a>
             </div>
+        </div>
+    </section>
 
+    <!-- BANNERS HORIZONTAIS -->
+
+    <section class="horizontal-banners">
+        <div class="container">
+            
+            <div class="horizontal-banners-item">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/banner-1.png" alt="">
+            </div>
+            
+            <div class="horizontal-banners-item">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/banner-2.png" alt="">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    
+    <section class="products">
+        <div class="container">
             <div class="products-title-container">
-                <h2>Mais procurados</h2>
+                <div></div>
+                <h2>
+                    Mais procurados
+                </h2>
             </div>
 
             <div class="products-container">
@@ -179,41 +200,72 @@
         </div>
     </section>
 
-    <!-- CLIENTS -->
+    <!-- ANUNCIANTES -->
 
-    <section class="clients">
-        <div class="clients-track">
-            <img class="clients-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/promo-1.svg" alt="">
-            <img class="clients-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/promo-2.svg" alt="">
-            <img class="clients-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/promo-3.svg" alt="">
-            <img class="clients-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/promo-4.svg" alt="">
-            <!-- duplicated for seamless loop -->
-            <img class="clients-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/promo-1.svg" alt="">
-            <img class="clients-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/promo-2.svg" alt="">
-            <img class="clients-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/promo-3.svg" alt="">
-            <img class="clients-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/promo-4.svg" alt="">
-            <!-- duplicated for seamless loop -->
-            <img class="clients-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/promo-1.svg" alt="">
-            <img class="clients-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/promo-2.svg" alt="">
-            <img class="clients-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/promo-3.svg" alt="">
-            <img class="clients-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/promo-4.svg" alt="">
+    <section class="advertisers">
+        <div class="container">
+            <h2>
+                <?php echo get_field('anunciantes_titulo') ?: 'Anunciantes'; ?>
+            </h2>
+
+            <span class="advertisers-text">
+                <?php echo get_field('anunciantes_subtitulo') ?: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis lacus ac magna mollis.'; ?>
+            </span>
+
+            <div class="advertisers-group">
+                <?php 
+                // Total number of advertiser slots
+                for ($i = 1; $i <= 4; $i++): 
+                    $title = get_field("anunciantes_item_{$i}_title") ?: "Anunciante {$i}";
+                    $text = get_field("anunciantes_item_{$i}_text") ?: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis lacus ac magna mollis.';
+                    $image = get_field("anunciantes_item_{$i}_image")['url'] ?? get_template_directory_uri() . "/assets/images/advertisers/item-{$i}.png";
+                    // $icon = get_field("anunciantes_item_{$i}_icon") ?: ['left', 'top', 'bottom', 'right'][$i-1]; // fallback order
+                ?>
+                    <div class="advertisers-item item-<?php echo $i; ?>" style="background-image:url('<?php echo esc_url($image); ?>')">
+                        <h3><?php echo esc_html($title); ?></h3>
+                        <span class="advertisers-item-text"><?php echo esc_html($text); ?></span>
+                        <!-- <i class="advertisers-icon <?php echo esc_attr($icon); ?>">
+                            <?php 
+                            // switch ($icon) {
+                            //     case 'left': echo '➜'; break;
+                            //     case 'right': echo '←'; break;
+                            //     case 'top': echo '⬇'; break;
+                            //     case 'bottom': echo '⬆'; break;
+                            //     default: echo '➜';
+                            // }
+                            ?>
+                        </i> -->
+                    </div>
+                <?php endfor; ?>
+            </div>
         </div>
     </section>
 
-    <!-- CALL TO ACTION -->
+
+<!-- CALL TO ACTION -->
 
     <section class="cta">
         <div class="cta-card">
-            <h2>Faça novos negócios e conexões</h2>
+            <h2>
+                EMPRESÁRIO
+                COLOQUE <span class="accent">SEU PAINEL</span>
+                NO IMOOH
+            </h2>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 Aliquam quis lacus ac magna mollis.
             </p>
-            <a class="btn" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
-                <span>Começar</span>
+
+            <!-- use an anchor styled as a button for navigation -->
+            <a class="btn no-link" href="/src/pages/products/product-page.html">
+                <span>
+                    Pedir agora
+                </span>
             </a>
         </div>
-        <div class="cta-card-image"></div>
+
+        <!-- decorative background image: aria-hidden if purely visual -->
+        <div class="cta-card-image" aria-hidden="true"></div>
     </section>
 
 <?php get_footer(); ?>
