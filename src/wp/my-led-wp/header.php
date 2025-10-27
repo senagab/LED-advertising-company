@@ -12,15 +12,16 @@
 </head>
 <body>
 
-<!-- HEADER -->
+    <!-- HEADER -->
 
     <section class="header">
-        <div class="header-direita">
+        <div class="header-esquerda">
             <h1 style="display: none;">
-                LOGO
+                logo
             </h1>
             <a href="#">
-                <span class="logo">LOGO</span>
+                <!-- <span class="logo">logo</span> -->
+                <img class="logo" src="./assets/images/hero/logo.png" alt="">
             </a>
         </div>
 
@@ -33,17 +34,17 @@
             <ul>
                 <li>
                     <a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>">
-                        sobre nós
+                        QUEM SOMOS
                     </a>    
                 </li>
                 <li>
-                    <a href="./src/pages/products/products.html" >
-                        produtos
+                    <a href="<?php echo esc_url( home_url( '/products/' ) ); ?>" >
+                        PRODUTOS
                     </a>    
                 </li>
                 <li>
-                    <a href="./src/pages/steps/steps.html">
-                        passo-a-passo
+                    <a href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>">
+                        ANUNCIANTES
                     </a>
                 </li>
             </ul>
@@ -53,7 +54,6 @@
             <div class="header-direita-item">
                 
                 <img class="icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/hero/icon-cart.png" alt="">
-                <!-- <img class="icon" src="./assets/images/hero/icon-cart.png" alt=""> -->
                 <a class="no-link" href="./src/pages/orders/orders.html">
                     <span class="cart-text">
                         Acompanhar <br>
@@ -76,5 +76,3 @@
             </div>
         </div>
     </section>
-
-    <!-- FIM HEADER -->
