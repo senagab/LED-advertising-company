@@ -42,42 +42,6 @@
         </h2>
     </section>
 
-    <!-- CARDS -->
-
-    <section class="cards">
-        <div class="card-container">
-            <div class="card-text">
-                <h2>lorem ipsum</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit,
-                    magna semper finibus blandit, purus mi laoreet sem, eget posuere nisi massa ut ligula.
-                </p>
-                <a class="btn no-link" href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>">
-                    Saber mais
-                </a>
-            </div>
-            <div class="card-image">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/cards/card-1.png" alt="man smiling">
-            </div>
-        </div>
-
-        <div class="card-container">
-            <div class="card-text">
-                <h2>lorem ipsum</h2>
-                <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit,
-                magna semper finibus blandit, purus mi laoreet sem, eget posuere nisi massa ut ligula.
-                </p>
-                <a class="btn no-link" href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>">
-                    Saber mais
-                </a>
-            </div>
-            <div class="card-image">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/cards/card-2.png" alt="woman holding coffee">
-            </div>
-        </div>
-    </section>
-
     <!-- PRODUCTS -->
     
     <section class="products">

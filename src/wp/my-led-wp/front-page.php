@@ -1,15 +1,6 @@
 <?php get_header(); ?>
 
-<!-- MODAL -->
-
-    <div id="tutorialModal" class="modal">
-        <div class="modal-content">
-            <!-- <span class="close">&times;</span> -->
-            <img src="tutorial.png" alt="Tutorial Postmooh" />
-        </div>
-    </div>
-
-<!-- HERO -->
+    <!-- HERO -->
 
     <section class="hero">
         <h2 class="hero-title">
@@ -49,42 +40,6 @@
         <h2 class="hero-2-title">
             <span>Já</span> <span>pensou</span> <span>em</span> <span>ver</span> <span>sua</span> <span>marca</span> <span>nos</span> <span>melhores</span> <span>locais</span> <span>de</span> <span class="accent">Campo</span> <span class="accent">Grande</span> <span>?</span>
         </h2>
-    </section>
-
-    <!-- CARDS -->
-
-    <section class="cards">
-        <div class="card-container">
-            <div class="card-text">
-                <h2>lorem ipsum</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit,
-                    magna semper finibus blandit, purus mi laoreet sem, eget posuere nisi massa ut ligula.
-                </p>
-                <a class="btn no-link" href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>">
-                    Saber mais
-                </a>
-            </div>
-            <div class="card-image">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/cards/card-1.png" alt="man smiling">
-            </div>
-        </div>
-
-        <div class="card-container">
-            <div class="card-text">
-                <h2>lorem ipsum</h2>
-                <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras hendrerit,
-                magna semper finibus blandit, purus mi laoreet sem, eget posuere nisi massa ut ligula.
-                </p>
-                <a class="btn no-link" href="<?php echo esc_url( home_url( '/about-us/' ) ); ?>">
-                    Saber mais
-                </a>
-            </div>
-            <div class="card-image">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/cards/card-2.png" alt="woman holding coffee">
-            </div>
-        </div>
     </section>
 
     <!-- PRODUCTS -->
