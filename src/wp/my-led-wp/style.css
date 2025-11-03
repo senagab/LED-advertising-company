@@ -347,7 +347,7 @@ a:active .logo {
 }
 
 .hero-title-colored {
-    color: #F26F23;
+    color: #F26F23 !important;
 }
 
 .hero-text {
@@ -877,8 +877,8 @@ a:active .logo {
     display: flex;
     align-items: stretch;      /* children will match height */
     justify-content: center;
-    background-color: #12111F;
-    color: #fff;
+    background-color: #12111F !important;
+    color: #fff !important;
     gap: 0;                    /* keep image flush to the right — change if you want spacing */
     box-sizing: border-box;
 }

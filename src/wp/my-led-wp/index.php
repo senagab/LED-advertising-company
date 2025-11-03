@@ -7,7 +7,7 @@
             O jeito mais fácil 
             de anunciar <br> em
             <span class="hero-title-colored">
-                Campo Grande?
+                <!-- texto gerado automaticamente -->
             </span>
         </h2>
         <div class="bottom-hero">
@@ -42,58 +42,79 @@
         </h2>
     </section>
 
-    <!-- PRODUCTS -->
-    
+<!-- PRODUCTS -->
     <section class="products">
         <div class="container">
             <div class="products-title-container">
                 <div></div>
                 <h2>
-                    Painéis recentes
+                    Mais procurados
                 </h2>
             </div>
 
             <div class="products-container">
                 <?php
                     $args = array(
-                        'post_type' => 'myled_product',
-                        'posts_per_page' => 8,
+                        'post_type' => 'product', // seu CPT
+                        'posts_per_page' => 4,
                         'orderby' => 'date',
                         'order' => 'DESC',
                     );
 
-                    $products = new WP_Query( $args );
-                    if ( $products->have_posts() ) :
-                        while ( $products->have_posts() ) : $products->the_post(); ?>
+                    $products = new WP_Query($args);
+
+                    if ($products->have_posts()) :
+                        while ($products->have_posts()) : $products->the_post();
+
+                            // Campos ACF
+                            $preco_hora = get_field('preco_hora') ?: 'R$20/hr';
+                            $cidade = get_field('cidade') ?: 'São Paulo, SP';
+                            $imagem_produto = get_field('imagem_do_produto');
+                            $titulo_produto = get_field('titulo_do_produto') ?: get_the_title();
+                ?>
                             <div class="products-item">
-                                <?php if ( has_post_thumbnail() ) : ?>
-                                    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium', array('class'=>'product-image')); ?></a>
+                                <?php if ($imagem_produto) : ?>
+                                    <a href="<?php the_permalink(); ?>">
+                                        <img src="<?php echo esc_url($imagem_produto['url']); ?>" alt="<?php echo esc_attr($titulo_produto); ?>" class="product-image">
+                                    </a>
+                                <?php elseif (has_post_thumbnail()) : ?>
+                                    <a href="<?php the_permalink(); ?>">
+                                        <?php the_post_thumbnail('medium', ['class' => 'product-image']); ?>
+                                    </a>
                                 <?php else : ?>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/product-1.png" alt="" class="product-image">
                                 <?php endif; ?>
 
                                 <div class="divisor"></div>
+
                                 <div class="product-detail">
                                     <div class="product-detail-text">
-                                        <h3><?php echo esc_html( get_post_meta(get_the_ID(), 'price', true) ?: 'R$20/hr' ); ?></h3>
-                                        <div class="city"><?php echo esc_html( get_post_meta(get_the_ID(), 'city', true) ?: 'São Paulo, SP' ); ?></div>
+                                        <h3><?php echo esc_html($preco_hora); ?></h3>
+                                        <div class="city"><?php echo esc_html($cidade); ?></div>
                                     </div>
+
                                     <div class="product-detail-button">
-                                        <a class="btn" href="<?php the_permalink(); ?>">Pedir agora</a>
+                                        <a class="btn no-link" href="<?php the_permalink(); ?>">
+                                            <span>Pedir agora</span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
-                        <?php endwhile;
+                <?php
+                        endwhile;
                         wp_reset_postdata();
                     endif;
                 ?>
             </div>
 
             <div class="products-button-container">
-                <a class="btn" href="<?php echo esc_url( home_url( '/products/' ) ); ?>">Ver todos</a>
+                <a class="btn" href="<?php echo esc_url(home_url('/products/')); ?>">
+                    <span>Ver todos</span>
+                </a>
             </div>
         </div>
     </section>
+
 
     <!-- BANNERS HORIZONTAIS -->
 
@@ -111,8 +132,7 @@
         </div>
     </section>
 
-    <!-- PRODUCTS -->
-    
+<!-- PRODUCTS -->
     <section class="products">
         <div class="container">
             <div class="products-title-container">
@@ -125,46 +145,68 @@
             <div class="products-container">
                 <?php
                     $args = array(
-                        'post_type' => 'myled_product',
-                        'posts_per_page' => 8,
+                        'post_type' => 'product', // seu CPT
+                        'posts_per_page' => 4,
                         'orderby' => 'date',
                         'order' => 'DESC',
                     );
 
-                    $products = new WP_Query( $args );
-                    if ( $products->have_posts() ) :
-                        while ( $products->have_posts() ) : $products->the_post(); ?>
+                    $products = new WP_Query($args);
+
+                    if ($products->have_posts()) :
+                        while ($products->have_posts()) : $products->the_post();
+
+                            // Campos ACF
+                            $preco_hora = get_field('preco_hora') ?: 'R$20/hr';
+                            $cidade = get_field('cidade') ?: 'São Paulo, SP';
+                            $imagem_produto = get_field('imagem_do_produto');
+                            $titulo_produto = get_field('titulo_do_produto') ?: get_the_title();
+                ?>
                             <div class="products-item">
-                                <?php if ( has_post_thumbnail() ) : ?>
-                                    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium', array('class'=>'product-image')); ?></a>
+                                <?php if ($imagem_produto) : ?>
+                                    <a href="<?php the_permalink(); ?>">
+                                        <img src="<?php echo esc_url($imagem_produto['url']); ?>" alt="<?php echo esc_attr($titulo_produto); ?>" class="product-image">
+                                    </a>
+                                <?php elseif (has_post_thumbnail()) : ?>
+                                    <a href="<?php the_permalink(); ?>">
+                                        <?php the_post_thumbnail('medium', ['class' => 'product-image']); ?>
+                                    </a>
                                 <?php else : ?>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/product-1.png" alt="" class="product-image">
                                 <?php endif; ?>
 
                                 <div class="divisor"></div>
+
                                 <div class="product-detail">
                                     <div class="product-detail-text">
-                                        <h3><?php echo esc_html( get_post_meta(get_the_ID(), 'price', true) ?: 'R$20/hr' ); ?></h3>
-                                        <div class="city"><?php echo esc_html( get_post_meta(get_the_ID(), 'city', true) ?: 'São Paulo, SP' ); ?></div>
+                                        <h3><?php echo esc_html($preco_hora); ?></h3>
+                                        <div class="city"><?php echo esc_html($cidade); ?></div>
                                     </div>
+
                                     <div class="product-detail-button">
-                                        <a class="btn" href="<?php the_permalink(); ?>">Pedir agora</a>
+                                        <a class="btn no-link" href="<?php the_permalink(); ?>">
+                                            <span>Pedir agora</span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
-                        <?php endwhile;
+                <?php
+                        endwhile;
                         wp_reset_postdata();
                     endif;
                 ?>
             </div>
 
             <div class="products-button-container">
-                <a class="btn" href="<?php echo esc_url( home_url( '/products/' ) ); ?>">Ver todos</a>
+                <a class="btn" href="<?php echo esc_url(home_url('/products/')); ?>">
+                    <span>Ver todos</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- ANUNCIANTES -->
+
+<!-- ANUNCIANTES -->
 
     <section class="advertisers">
         <div class="container">
