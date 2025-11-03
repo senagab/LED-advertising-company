@@ -108,7 +108,8 @@
             </div>
 
             <div class="products-button-container">
-                <a class="btn" href="<?php echo esc_url(home_url('/products/')); ?>">
+                <!-- <a class="btn" href="<?php echo esc_url(home_url('/products/')); ?>"> -->
+                <a class="btn" href="<?php echo esc_url( get_permalink( wc_get_page_id('shop') ) ); ?>">
                     <span>Ver todos</span>
                 </a>
             </div>
@@ -198,7 +199,8 @@
             </div>
 
             <div class="products-button-container">
-                <a class="btn" href="<?php echo esc_url(home_url('/products/')); ?>">
+                <!-- <a class="btn" href="<?php echo esc_url(home_url('/products/')); ?>"> -->
+                    <a class="btn" href="<?php echo esc_url( get_permalink( wc_get_page_id('shop') ) ); ?>">
                     <span>Ver todos</span>
                 </a>
             </div>
