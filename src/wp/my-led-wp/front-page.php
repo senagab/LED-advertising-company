@@ -1,4 +1,13 @@
+<?php
+/*
+ * Template Name: Home Nova
+ * Template Post Type: page
+ */
+?>
+
 <?php get_header(); ?>
+
+<?php echo '<!-- FRONT-PAGE.PHP ACTIVE -->'; ?>
 
     <!-- HERO -->
 
@@ -43,81 +52,86 @@
     </section>
 
 <!-- PRODUCTS -->
+
     <section class="products">
         <div class="container">
             <div class="products-title-container">
-                <div></div>
-                <h2>
-                    Mais procurados
-                </h2>
+                <h2>Recentes</h2>
             </div>
 
             <div class="products-container">
                 <?php
+                    // Configura a query para produtos com a tag "recentes"
                     $args = array(
-                        'post_type' => 'product', // seu CPT
-                        'posts_per_page' => 4,
-                        'orderby' => 'date',
-                        'order' => 'DESC',
-                    );
+                    'post_type'      => 'product',
+                    'posts_per_page' => 4,
+                    'orderby'        => 'date',
+                    'order'          => 'DESC',
+                    'tax_query'      => array(
+                        array(
+                        'taxonomy' => 'product_tag',
+                        'field'    => 'slug',
+                        'terms'    => 'recentes',
+                        ),
+                    ),
+                );
 
-                    $products = new WP_Query($args);
+                $products = new WP_Query($args);
 
-                    if ($products->have_posts()) :
-                        while ($products->have_posts()) : $products->the_post();
+                if ($products->have_posts()) :
+                    while ($products->have_posts()) : $products->the_post();
+                        global $product;
+                        $product = wc_get_product(get_the_ID());
 
-                            // Campos ACF
-                            $preco_hora = get_field('preco_hora') ?: 'R$20/hr';
-                            $cidade = get_field('cidade') ?: 'São Paulo, SP';
-                            $imagem_produto = get_field('imagem_do_produto');
-                            $titulo_produto = get_field('titulo_do_produto') ?: get_the_title();
+                        if ( ! $product ) {
+                            continue; // pula se o produto não existir
+                        }
+
+                        $price_html = $product->get_price_html();
+
+                        // Pega o atributo personalizado "cidade"
+                        $cidade_terms = wp_get_post_terms(get_the_ID(), 'pa_cidade');
+                        $cidade = !empty($cidade_terms) ? $cidade_terms[0]->name : '';
                 ?>
-                            <div class="products-item">
-                                <?php if ($imagem_produto) : ?>
-                                    <a href="<?php the_permalink(); ?>">
-                                        <img src="<?php echo esc_url($imagem_produto['url']); ?>" alt="<?php echo esc_attr($titulo_produto); ?>" class="product-image">
-                                    </a>
-                                <?php elseif (has_post_thumbnail()) : ?>
-                                    <a href="<?php the_permalink(); ?>">
-                                        <?php the_post_thumbnail('medium', ['class' => 'product-image']); ?>
-                                    </a>
-                                <?php else : ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/product-1.png" alt="" class="product-image">
-                                <?php endif; ?>
+                <div class="products-item">
+                    <a href="<?php the_permalink(); ?>">
+                        <?php 
+                            if (has_post_thumbnail()) {
+                                the_post_thumbnail('medium', ['class' => 'product-image']);
+                            } else {
+                                echo '<img src="' . get_template_directory_uri() . '/assets/images/products/product-1.png" alt="" class="product-image">';
+                            }
+                        ?>
+                    </a>
 
-                                <div class="divisor"></div>
+                    <div class="divisor"></div>
 
-                                <div class="product-detail">
-                                    <div class="product-detail-text">
-                                        <h3><?php echo esc_html($preco_hora); ?></h3>
-                                        <div class="city"><?php echo esc_html($cidade); ?></div>
-                                    </div>
+                    <div class="product-detail">
+                        <div class="product-detail-text">
+                            <h3><?php echo $price_html; ?></h3>
+                            <!-- <div class="city"><?php echo esc_html($cidade); ?></div> -->
+                            <div class="city">teste</div>
+                        </div>
 
-                                    <div class="product-detail-button">
-                                        <a class="btn no-link" href="<?php the_permalink(); ?>">
-                                            <span>Pedir agora</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="product-detail-button">
+                            <a class="btn no-link" href="<?php the_permalink(); ?>">
+                                <span>Pedir agora</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 <?php
-                        endwhile;
+                    endwhile;
                         wp_reset_postdata();
+                    else:
+                        echo '<p>Nenhum produto encontrado.</p>';
                     endif;
                 ?>
-            </div>
-
-            <div class="products-button-container">
-                <!-- <a class="btn" href="<?php echo esc_url(home_url('/products/')); ?>"> -->
-                <a class="btn" href="<?php echo esc_url( get_permalink( wc_get_page_id('shop') ) ); ?>">
-                    <span>Ver todos</span>
-                </a>
             </div>
         </div>
     </section>
 
-
-    <!-- BANNERS HORIZONTAIS -->
+<!-- BANNERS HORIZONTAIS -->
 
     <section class="horizontal-banners">
         <div class="container">
@@ -134,120 +148,116 @@
     </section>
 
 <!-- PRODUCTS -->
+    
     <section class="products">
         <div class="container">
             <div class="products-title-container">
-                <div></div>
-                <h2>
-                    Mais procurados
-                </h2>
+                <h2>Mais procurados</h2>
             </div>
 
             <div class="products-container">
                 <?php
+                    // Configura a query para produtos com a tag "recentes"
                     $args = array(
-                        'post_type' => 'product', // seu CPT
-                        'posts_per_page' => 4,
-                        'orderby' => 'date',
-                        'order' => 'DESC',
-                    );
+                    'post_type'      => 'product',
+                    'posts_per_page' => 4,
+                    'orderby'        => 'date',
+                    'order'          => 'DESC',
+                    'tax_query'      => array(
+                        array(
+                        'taxonomy' => 'product_tag',
+                        'field'    => 'slug',
+                        'terms'    => 'mais-procurados',
+                        ),
+                    ),
+                );
 
-                    $products = new WP_Query($args);
+                $products = new WP_Query($args);
 
-                    if ($products->have_posts()) :
-                        while ($products->have_posts()) : $products->the_post();
+                if ($products->have_posts()) :
+                    while ($products->have_posts()) : $products->the_post();
+                        global $product;
+                        $product = wc_get_product(get_the_ID());
 
-                            // Campos ACF
-                            $preco_hora = get_field('preco_hora') ?: 'R$20/hr';
-                            $cidade = get_field('cidade') ?: 'São Paulo, SP';
-                            $imagem_produto = get_field('imagem_do_produto');
-                            $titulo_produto = get_field('titulo_do_produto') ?: get_the_title();
+                        if ( ! $product ) {
+                            continue; // pula se o produto não existir
+                        }
+
+                        $price_html = $product->get_price_html();
+
+                        // Pega o atributo personalizado "cidade"
+                        $cidade_terms = wp_get_post_terms(get_the_ID(), 'pa_cidade');
+                        $cidade = !empty($cidade_terms) ? $cidade_terms[0]->name : '';
                 ?>
-                            <div class="products-item">
-                                <?php if ($imagem_produto) : ?>
-                                    <a href="<?php the_permalink(); ?>">
-                                        <img src="<?php echo esc_url($imagem_produto['url']); ?>" alt="<?php echo esc_attr($titulo_produto); ?>" class="product-image">
-                                    </a>
-                                <?php elseif (has_post_thumbnail()) : ?>
-                                    <a href="<?php the_permalink(); ?>">
-                                        <?php the_post_thumbnail('medium', ['class' => 'product-image']); ?>
-                                    </a>
-                                <?php else : ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/product-1.png" alt="" class="product-image">
-                                <?php endif; ?>
+                <div class="products-item">
+                    <a href="<?php the_permalink(); ?>">
+                        <?php 
+                            if (has_post_thumbnail()) {
+                                the_post_thumbnail('medium', ['class' => 'product-image']);
+                            } else {
+                                echo '<img src="' . get_template_directory_uri() . '/assets/images/products/product-1.png" alt="" class="product-image">';
+                            }
+                        ?>
+                    </a>
 
-                                <div class="divisor"></div>
+                    <div class="divisor"></div>
 
-                                <div class="product-detail">
-                                    <div class="product-detail-text">
-                                        <h3><?php echo esc_html($preco_hora); ?></h3>
-                                        <div class="city"><?php echo esc_html($cidade); ?></div>
-                                    </div>
+                    <div class="product-detail">
+                        <div class="product-detail-text">
+                            <h3><?php echo $price_html; ?></h3>
+                            <!-- <div class="city"><?php echo esc_html($cidade); ?></div> -->
+                            <div class="city">teste</div>
+                        </div>
 
-                                    <div class="product-detail-button">
-                                        <a class="btn no-link" href="<?php the_permalink(); ?>">
-                                            <span>Pedir agora</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="product-detail-button">
+                            <a class="btn no-link" href="<?php the_permalink(); ?>">
+                                <span>Pedir agora</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 <?php
-                        endwhile;
+                    endwhile;
                         wp_reset_postdata();
+                    else:
+                        echo '<p>Nenhum produto encontrado.</p>';
                     endif;
                 ?>
-            </div>
-
-            <div class="products-button-container">
-                <!-- <a class="btn" href="<?php echo esc_url(home_url('/products/')); ?>"> -->
-                    <a class="btn" href="<?php echo esc_url( get_permalink( wc_get_page_id('shop') ) ); ?>">
-                    <span>Ver todos</span>
-                </a>
             </div>
         </div>
     </section>
 
 
-<!-- ANUNCIANTES -->
 
+<!-- ANUNCIANTES -->
     <section class="advertisers">
         <div class="container">
             <h2>
-                <?php echo get_field('anunciantes_titulo') ?: 'Anunciantes'; ?>
+                <?php echo esc_html(get_field('titulo_anunciantes')) ?: 'Anunciantes'; ?>
             </h2>
 
             <span class="advertisers-text">
-                <?php echo get_field('anunciantes_subtitulo') ?: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis lacus ac magna mollis.'; ?>
+                <?php echo esc_html(get_field('texto_anunciantes')) ?: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis lacus ac magna mollis.'; ?>
             </span>
 
             <div class="advertisers-group">
                 <?php 
-                // Total number of advertiser slots
+                // Loop de 1 a 4 (anunciantes)
                 for ($i = 1; $i <= 4; $i++): 
-                    $title = get_field("anunciantes_item_{$i}_title") ?: "Anunciante {$i}";
-                    $text = get_field("anunciantes_item_{$i}_text") ?: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis lacus ac magna mollis.';
-                    $image = get_field("anunciantes_item_{$i}_image")['url'] ?? get_template_directory_uri() . "/assets/images/advertisers/item-{$i}.png";
-                    // $icon = get_field("anunciantes_item_{$i}_icon") ?: ['left', 'top', 'bottom', 'right'][$i-1]; // fallback order
+                    $titulo = get_field("titulo_anunciante_{$i}") ?: "Anunciante {$i}";
+                    $descricao = get_field("descricao_anunciante_{$i}") ?: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+                    $foto = get_field("foto_anunciante_{$i}");
+                    $foto_url = $foto ? esc_url($foto['url']) : get_template_directory_uri() . "/assets/images/advertisers/item-{$i}.png";
                 ?>
-                    <div class="advertisers-item item-<?php echo $i; ?>" style="background-image:url('<?php echo esc_url($image); ?>')">
-                        <h3><?php echo esc_html($title); ?></h3>
-                        <span class="advertisers-item-text"><?php echo esc_html($text); ?></span>
-                        <!-- <i class="advertisers-icon <?php echo esc_attr($icon); ?>">
-                            <?php 
-                            // switch ($icon) {
-                            //     case 'left': echo '➜'; break;
-                            //     case 'right': echo '←'; break;
-                            //     case 'top': echo '⬇'; break;
-                            //     case 'bottom': echo '⬆'; break;
-                            //     default: echo '➜';
-                            // }
-                            ?>
-                        </i> -->
+                    <div class="advertisers-item item-<?php echo $i; ?>" style="background-image:url('<?php echo $foto_url; ?>')">
+                        <h3><?php echo esc_html($titulo); ?></h3>
+                        <span class="advertisers-item-text"><?php echo esc_html($descricao); ?></span>
                     </div>
                 <?php endfor; ?>
             </div>
         </div>
     </section>
+
 
 
 <!-- CALL TO ACTION -->
