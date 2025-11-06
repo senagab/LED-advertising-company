@@ -61,17 +61,16 @@
 
             <div class="products-container">
                 <?php
-                    // Configura a query para produtos com a tag "recentes"
                     $args = array(
-                    'post_type'      => 'product',
-                    'posts_per_page' => 4,
-                    'orderby'        => 'date',
-                    'order'          => 'DESC',
-                    'tax_query'      => array(
-                        array(
-                        'taxonomy' => 'product_tag',
-                        'field'    => 'slug',
-                        'terms'    => 'recentes',
+                        'post_type' => 'product',
+                        'posts_per_page' => 4,
+                        'orderby' => 'date',
+                        'order' => 'DESC',
+                        'tax_query' => array(
+                            array(
+                            'taxonomy' => 'product_tag',
+                            'field'    => 'slug',
+                            'terms'    => 'recentes',
                         ),
                     ),
                 );
@@ -82,44 +81,34 @@
                     while ($products->have_posts()) : $products->the_post();
                         global $product;
                         $product = wc_get_product(get_the_ID());
-
-                        if ( ! $product ) {
-                            continue; // pula se o produto não existir
-                        }
-
                         $price_html = $product->get_price_html();
-
-                        // Pega o atributo personalizado "cidade"
-                        $cidade_terms = wp_get_post_terms(get_the_ID(), 'pa_cidade');
-                        $cidade = !empty($cidade_terms) ? $cidade_terms[0]->name : '';
                 ?>
-                <div class="products-item">
-                    <a href="<?php the_permalink(); ?>">
-                        <?php 
-                            if (has_post_thumbnail()) {
-                                the_post_thumbnail('medium', ['class' => 'product-image']);
-                            } else {
-                                echo '<img src="' . get_template_directory_uri() . '/assets/images/products/product-1.png" alt="" class="product-image">';
-                            }
-                        ?>
-                    </a>
+                    <div class="products-item">
+                        <a href="<?php the_permalink(); ?>">
+                            <?php 
+                                if (has_post_thumbnail()) {
+                                    the_post_thumbnail('medium', ['class' => 'product-image']);
+                                } else {
+                                    echo '<img src="' . get_template_directory_uri() . '/assets/images/products/product-1.png" alt="" class="product-image">';
+                                }
+                            ?>
+                        </a>
 
-                    <div class="divisor"></div>
+                        <div class="divisor"></div>
 
-                    <div class="product-detail">
-                        <div class="product-detail-text">
-                            <h3><?php echo $price_html; ?></h3>
-                            <!-- <div class="city"><?php echo esc_html($cidade); ?></div> -->
-                            <div class="city">teste</div>
-                        </div>
+                        <div class="product-detail">
+                            <div class="product-detail-text">
+                                <h3><?php echo $price_html; ?></h3>
+                                <div class="city">Campo Grande</div>
+                            </div>
 
-                        <div class="product-detail-button">
-                            <a class="btn no-link" href="<?php the_permalink(); ?>">
-                                <span>Pedir agora</span>
-                            </a>
+                            <div class="product-detail-button">
+                                <a class="btn no-link" href="<?php the_permalink(); ?>">
+                                    <span>Pedir agora</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
                 <?php
                     endwhile;
                         wp_reset_postdata();
@@ -131,21 +120,33 @@
         </div>
     </section>
 
+
 <!-- BANNERS HORIZONTAIS -->
+<section class="horizontal-banners">
+    <div class="container">
+        <?php 
+            // Garante que estamos pegando os campos da página atual
+            $page_id = get_queried_object_id();
 
-    <section class="horizontal-banners">
-        <div class="container">
-            
-            <div class="horizontal-banners-item">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/banner-1.png" alt="">
-            </div>
-            
-            <div class="horizontal-banners-item">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/banner-2.png" alt="">
-            </div>
+            // Obtém as imagens definidas no ACF
+            $imagem_1 = get_field('imagem_1', $page_id);
+            $imagem_2 = get_field('imagem_2', $page_id);
 
+            // Define as URLs (usa fallback se não houver imagem)
+            $imagem_1_url = $imagem_1 ? esc_url($imagem_1['url']) : get_template_directory_uri() . '/assets/images/products/banner-1.png';
+            $imagem_2_url = $imagem_2 ? esc_url($imagem_2['url']) : get_template_directory_uri() . '/assets/images/products/banner-2.png';
+        ?>
+
+        <div class="horizontal-banners-item">
+            <img src="<?php echo $imagem_1_url; ?>" alt="Banner 1">
         </div>
-    </section>
+        
+        <div class="horizontal-banners-item">
+            <img src="<?php echo $imagem_2_url; ?>" alt="Banner 2">
+        </div>
+    </div>
+</section>
+
 
 <!-- PRODUCTS -->
     
@@ -157,17 +158,16 @@
 
             <div class="products-container">
                 <?php
-                    // Configura a query para produtos com a tag "recentes"
                     $args = array(
-                    'post_type'      => 'product',
-                    'posts_per_page' => 4,
-                    'orderby'        => 'date',
-                    'order'          => 'DESC',
-                    'tax_query'      => array(
-                        array(
-                        'taxonomy' => 'product_tag',
-                        'field'    => 'slug',
-                        'terms'    => 'mais-procurados',
+                        'post_type' => 'product',
+                        'posts_per_page' => 4,
+                        'orderby' => 'date',
+                        'order' => 'DESC',
+                        'tax_query' => array(
+                            array(
+                            'taxonomy' => 'product_tag',
+                            'field'    => 'slug',
+                            'terms'    => 'mais-procurados',
                         ),
                     ),
                 );
@@ -178,44 +178,34 @@
                     while ($products->have_posts()) : $products->the_post();
                         global $product;
                         $product = wc_get_product(get_the_ID());
-
-                        if ( ! $product ) {
-                            continue; // pula se o produto não existir
-                        }
-
                         $price_html = $product->get_price_html();
-
-                        // Pega o atributo personalizado "cidade"
-                        $cidade_terms = wp_get_post_terms(get_the_ID(), 'pa_cidade');
-                        $cidade = !empty($cidade_terms) ? $cidade_terms[0]->name : '';
                 ?>
-                <div class="products-item">
-                    <a href="<?php the_permalink(); ?>">
-                        <?php 
-                            if (has_post_thumbnail()) {
-                                the_post_thumbnail('medium', ['class' => 'product-image']);
-                            } else {
-                                echo '<img src="' . get_template_directory_uri() . '/assets/images/products/product-1.png" alt="" class="product-image">';
-                            }
-                        ?>
-                    </a>
+                    <div class="products-item">
+                        <a href="<?php the_permalink(); ?>">
+                            <?php 
+                                if (has_post_thumbnail()) {
+                                    the_post_thumbnail('medium', ['class' => 'product-image']);
+                                } else {
+                                    echo '<img src="' . get_template_directory_uri() . '/assets/images/products/product-1.png" alt="" class="product-image">';
+                                }
+                            ?>
+                        </a>
 
-                    <div class="divisor"></div>
+                        <div class="divisor"></div>
 
-                    <div class="product-detail">
-                        <div class="product-detail-text">
-                            <h3><?php echo $price_html; ?></h3>
-                            <!-- <div class="city"><?php echo esc_html($cidade); ?></div> -->
-                            <div class="city">teste</div>
-                        </div>
+                        <div class="product-detail">
+                            <div class="product-detail-text">
+                                <h3><?php echo $price_html; ?></h3>
+                                <div class="city">Campo Grande</div>
+                            </div>
 
-                        <div class="product-detail-button">
-                            <a class="btn no-link" href="<?php the_permalink(); ?>">
-                                <span>Pedir agora</span>
-                            </a>
+                            <div class="product-detail-button">
+                                <a class="btn no-link" href="<?php the_permalink(); ?>">
+                                    <span>Pedir agora</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
                 <?php
                     endwhile;
                         wp_reset_postdata();
@@ -227,26 +217,30 @@
         </div>
     </section>
 
-
-
 <!-- ANUNCIANTES -->
+
     <section class="advertisers">
         <div class="container">
-            <h2>
-                <?php echo esc_html(get_field('titulo_anunciantes')) ?: 'Anunciantes'; ?>
-            </h2>
+            <?php 
+                $page_id = get_queried_object_id();
+                $grupo_anunciantes = get_field('anunciantes', $page_id);
 
-            <span class="advertisers-text">
-                <?php echo esc_html(get_field('texto_anunciantes')) ?: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis lacus ac magna mollis.'; ?>
-            </span>
+                $titulo_anunciantes = $grupo_anunciantes['titulo_anunciantes'] ?? 'Anunciantes';
+                $subtitulo_anunciantes = $grupo_anunciantes['subtitulo_anunciantes'] ?? '';
+            ?>
+            
+            <h2><?php echo esc_html($titulo_anunciantes); ?></h2>
+
+            <?php if ($subtitulo_anunciantes): ?>
+                <span class="advertisers-text"><?php echo esc_html($subtitulo_anunciantes); ?></span>
+            <?php endif; ?>
 
             <div class="advertisers-group">
                 <?php 
-                // Loop de 1 a 4 (anunciantes)
                 for ($i = 1; $i <= 4; $i++): 
-                    $titulo = get_field("titulo_anunciante_{$i}") ?: "Anunciante {$i}";
-                    $descricao = get_field("descricao_anunciante_{$i}") ?: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
-                    $foto = get_field("foto_anunciante_{$i}");
+                    $titulo = $grupo_anunciantes["titulo_anunciante_{$i}"] ?? "Anunciante {$i}";
+                    $descricao = $grupo_anunciantes["descricao_anunciante_{$i}"] ?? 'Lorem ipsum dolor sit amet.';
+                    $foto = $grupo_anunciantes["foto_anunciante_{$i}"] ?? null;
                     $foto_url = $foto ? esc_url($foto['url']) : get_template_directory_uri() . "/assets/images/advertisers/item-{$i}.png";
                 ?>
                     <div class="advertisers-item item-<?php echo $i; ?>" style="background-image:url('<?php echo $foto_url; ?>')">
@@ -259,31 +253,41 @@
     </section>
 
 
-
 <!-- CALL TO ACTION -->
+<section class="cta">
+    <?php 
+        // Obtém o ID da página atual
+        $page_id = get_queried_object_id();
 
-    <section class="cta">
-        <div class="cta-card">
-            <h2>
-                EMPRESÁRIO
-                COLOQUE <span class="accent">SEU PAINEL</span>
-                NO IMOOH
-            </h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Aliquam quis lacus ac magna mollis.
-            </p>
+        // Busca a imagem definida no ACF
+        $imagem_cta = get_field('imagem_cta', $page_id);
 
-            <!-- use an anchor styled as a button for navigation -->
-            <a class="btn no-link" href="/src/pages/products/product-page.html">
-                <span>
-                    Pedir agora
-                </span>
-            </a>
-        </div>
+        // Define a URL da imagem (fallback caso o campo esteja vazio)
+        $imagem_cta_url = $imagem_cta ? esc_url($imagem_cta['url']) : get_template_directory_uri() . '/assets/images/defaults/cta-bg.png';
 
-        <!-- decorative background image: aria-hidden if purely visual -->
-        <div class="cta-card-image" aria-hidden="true"></div>
-    </section>
+        // Campos opcionais (caso futuramente queira torná-los dinâmicos)
+        $titulo_cta = get_field('titulo_cta', $page_id) ?: 'EMPRESÁRIO COLOQUE <span class="accent">SEU PAINEL</span> NO IMOOH';
+        $descricao_cta = get_field('descricao_cta', $page_id) ?: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis lacus ac magna mollis.';
+        $link_cta = get_field('link_cta', $page_id) ?: '/src/pages/products/product-page.html';
+        $texto_botao_cta = get_field('texto_botao_cta', $page_id) ?: 'Pedir agora';
+    ?>
+
+    <div class="cta-card">
+        <h2><?php echo wp_kses_post($titulo_cta); ?></h2>
+        <p><?php echo esc_html($descricao_cta); ?></p>
+
+        <a class="btn no-link" href="<?php echo esc_url($link_cta); ?>">
+            <span><?php echo esc_html($texto_botao_cta); ?></span>
+        </a>
+    </div>
+
+    <!-- Imagem de fundo decorativa -->
+    <div 
+        class="cta-card-image" 
+        aria-hidden="true" 
+        style="background-image: url('<?php echo $imagem_cta_url; ?>');">
+    </div>
+</section>
+
 
 <?php get_footer(); ?>
