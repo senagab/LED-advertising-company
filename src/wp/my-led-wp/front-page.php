@@ -117,6 +117,11 @@
                     endif;
                 ?>
             </div>
+            <div class="products-button-container">
+                <a class="btn no-link" href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>">
+                    <span>Ver todos</span>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -213,6 +218,12 @@
                         echo '<p>Nenhum produto encontrado.</p>';
                     endif;
                 ?>
+            </div>
+            
+            <div class="products-button-container">
+                <a class="btn no-link" href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>">
+                    <span>Ver todos</span>
+                </a>
             </div>
         </div>
     </section>
