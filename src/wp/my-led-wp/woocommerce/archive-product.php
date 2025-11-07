@@ -10,19 +10,6 @@ get_header();
       <h2>Painéis</h2>
     </div>
 
-    <!-- FILTRO DE CIDADES (exemplo simples estático, pode ser dinâmico depois com ACF ou taxonomia) -->
-    <form class="select">
-      <p>
-        <label for="city-select">Escolha uma cidade</label>
-        <select id="city-select" name="city">
-          <option value="">Todas</option>
-          <option value="sao-paulo">São Paulo</option>
-          <option value="guarulhos">Guarulhos</option>
-          <option value="amsterdam">Amsterdam</option>
-        </select>
-      </p>
-    </form>
-
     <div class="products-container">
       <?php if (woocommerce_product_loop()) : ?>
 
