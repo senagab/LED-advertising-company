@@ -78,4 +78,19 @@ add_action('wp_enqueue_scripts', 'mytheme_enqueue_scripts');
 // }
 // add_action('manage_myled_product_posts_custom_column','myled_show_product_columns',10,2);
 
+// Força WooCommerce a usar archive-product.php na página da loja
+add_filter('template_include', function($template) {
+    if (is_shop()) {
+        $shop_template = get_stylesheet_directory() . '/woocommerce/archive-product.php';
+        if (file_exists($shop_template)) {
+            return $shop_template;
+        }
+    }
+    return $template;
+});
 
+
+add_action('wp_footer', function() {
+    global $template;
+    echo '<!-- TEMPLATE ATUAL: ' . basename($template) . ' -->';
+});
