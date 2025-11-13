@@ -1,15 +1,11 @@
 <?php
-// Garante que a query seja de produtos, não da página "Loja"
-if ( ! is_post_type_archive('product') ) {
-    wp_reset_query();
-    query_posts( array(
-        'post_type' => 'product',
-        'posts_per_page' => 12,
-        'post_status' => 'publish'
-    ) );
-}
-?>
+/**
+ * Template for WooCommerce Shop page
+ * Custom: MyLED theme
+ */
 
+get_header(); // <-- adiciona o header do tema
+?>
 
 <main class="loja-container">
     <h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
@@ -36,3 +32,7 @@ if ( ! is_post_type_archive('product') ) {
 
     <?php do_action('woocommerce_after_main_content'); ?>
 </main>
+
+<?php
+get_footer(); // <-- adiciona o footer do tema
+?>

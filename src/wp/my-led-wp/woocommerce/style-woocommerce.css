@@ -1,0 +1,60 @@
+/* Estilo personalizado para WooCommerce */
+body.woocommerce ul.products {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 20px !important;
+  background-color: #F0F0F0 !important;
+  padding: 60px 20px !important;
+}
+
+body.woocommerce ul.products li.product {
+  background-color: #fff !important;
+  border-radius: 25px !important;
+  border: 1px solid #ddd !important;
+  overflow: hidden !important;
+  width: 270px !important;
+  padding: 20px !important;
+  text-align: left !important;
+  transition: transform 0.2s ease;
+}
+
+body.woocommerce ul.products li.product:hover {
+  transform: scale(1.03);
+}
+
+body.woocommerce ul.products li.product img {
+  border-radius: 12px 12px 0 0 !important;
+  width: 100% !important;
+  height: 230px !important;
+  object-fit: cover !important;
+  margin-bottom: 10px !important;
+}
+
+body.woocommerce ul.products li.product h2.woocommerce-loop-product__title {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: #1f1f1f !important;
+  margin-bottom: 8px !important;
+}
+
+body.woocommerce ul.products li.product .price {
+  color: #1f1f1f !important;
+  font-weight: 700 !important;
+  font-size: 18px !important;
+}
+
+body.woocommerce ul.products li.product a.button {
+  display: inline-block !important;
+  background-color: #1f1f1f !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+  padding: 10px 15px !important;
+  text-decoration: none !important;
+  margin-top: 10px !important;
+  transition: background-color 0.2s ease;
+}
+
+body.woocommerce ul.products li.product a.button:hover {
+  background-color: #F26F23 !important;
+}

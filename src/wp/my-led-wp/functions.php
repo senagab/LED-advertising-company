@@ -94,3 +94,20 @@ add_action('wp_footer', function() {
     global $template;
     echo '<!-- TEMPLATE ATUAL: ' . basename($template) . ' -->';
 });
+
+
+function myled_theme_setup() {
+    add_theme_support( 'woocommerce' );
+}
+add_action( 'after_setup_theme', 'myled_theme_setup' );
+
+
+function mytheme_enqueue_woocommerce_styles() {
+    wp_enqueue_style(
+        'mytheme-woocommerce-style',
+        get_stylesheet_directory_uri() . '/style-woocommerce.css',
+        array(),
+        filemtime(get_stylesheet_directory() . '/style-woocommerce.css')
+    );
+}
+add_action('wp_enqueue_scripts', 'mytheme_enqueue_woocommerce_styles', 999);
